@@ -1,14 +1,3 @@
-// Simpele functionaliteit voor navigatie
-document.querySelectorAll('nav ul li a').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        window.scrollTo({
-            top: target.offsetTop,
-            behavior: 'smooth'
-        });
-    });
-});
 
 // Functie om leeftijd te berekenen
 function berekenLeeftijd(geboortedatum) {
@@ -30,9 +19,6 @@ function berekenLeeftijd(geboortedatum) {
 
 const geboortedatum = new Date(2004, 7, 17); // Maand is 0-indexed, dus 7 = augustus
 
-// Leeftijd in de HTML plaatsen
-document.getElementById('leeftijd').textContent = berekenLeeftijd(geboortedatum);
-
 document.addEventListener('DOMContentLoaded', function() {
     var coll = document.querySelectorAll('.collapsible');
 
@@ -40,11 +26,18 @@ document.addEventListener('DOMContentLoaded', function() {
         btn.addEventListener('click', function() {
             this.classList.toggle('active');
             var content = this.nextElementSibling;
-            if (content.style.display === 'block') {
-                content.style.display = 'none';
+
+            if (content.style.maxHeight) {
+                // Als max-height is ingesteld, reset het
+                content.style.maxHeight = null;
             } else {
-                content.style.display = 'block';
+                // Anders, stel de max-height in op de scroll hoogte
+                content.style.maxHeight = content.scrollHeight + "px"; // Maakt de hoogte dynamisch
             }
         });
     });
 });
+
+
+document.getElementById('leeftijd').textContent = berekenLeeftijd(geboortedatum);
+

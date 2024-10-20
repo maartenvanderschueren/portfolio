@@ -1,122 +1,213 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+html, body {
+    height: 100%; /* Zorg ervoor dat de body 100% van de viewport hoogte heeft */
+    margin: 0; /* Verwijder de standaard marge */
 }
+
+body {
+  font-family: montserrat, montserrat;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  display: flex;
+    flex-direction: column; /* Plaats de elementen in een kolom */
+}
+
 
 header {
-    background-color: #2a66aa;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+    display: flex;                  /* Zet de header op flexbox */
+    align-items: center;            /* Centreert de inhoud verticaal */
+    height: 100px;                  /* Stel de hoogte van de header in */
+    background-color: #2a66aa;     /* Achtergrondkleur van de header */
+    color: white;                   /* Tekstkleur */
+    justify-content: space-between;
 }
 
-.collapsible {
-    background-color: #333;
-    color: white;
-    cursor: pointer;
-    padding: 15px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    font-size: 18px;
-    border-radius: 5px;
-    margin-bottom: 5px;
+header #linkedin {
+  font-size: 30px; /* Pas deze waarde aan voor grotere iconen */
+  color: inherit; /* Zorg ervoor dat de kleur overgenomen wordt van de ouder */
+  text-decoration: none; /* Verwijder de onderstreping van de link */
 }
 
-.collapsible:after {
-    content: '\002B'; /* Plus teken als default */
-    color: white;
-    float: right;
+header #mail {
+  font-size: 30px; /* Pas deze waarde aan voor grotere iconen */
+  color: inherit; /* Zorg ervoor dat de kleur overgenomen wordt van de ouder */
+  text-decoration: none; /* Verwijder de onderstreping van de link */
 }
 
-.collapsible.active:after {
-    content: "\2212"; /* Min teken als actief (uitgeklapt) */
+header #linkedin:hover {
+  font-size: 30px; /* Pas deze waarde aan voor grotere iconen */
+  color: #102946; /* Zorg ervoor dat de kleur overgenomen wordt van de ouder */
+  text-decoration: none; /* Verwijder de onderstreping van de link */
 }
 
-.content {
-    padding: 0 15px;
-    display: none;
-    background-color: #f1f1f1;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-top: 5px;
+header #mail:hover {
+  font-size: 30px; /* Pas deze waarde aan voor grotere iconen */
+  color: #102946; /* Zorg ervoor dat de kleur overgenomen wordt van de ouder */
+  text-decoration: none; /* Verwijder de onderstreping van de link */
 }
-
-.content ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.content ul li {
-    padding: 10px 0;
-    border-bottom: 1px solid #ccc;
-}
-
-.content ul li:last-child {
-    border-bottom: none;
-}
-
 
 header h1 {
-    margin: 0;
+    margin: 0;                     /* Verwijder standaard marge van de h1 */
+    padding-left: 20px;            /* Voeg wat padding toe aan de linkerkant */
+    flex: 0 0 auto; 
+}
+
+nav {
+  display: flex;
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
+  list-style-type: none; /* Verwijder standaard opsommingstekens */
+  padding: 0;
+  margin: auto; /* Verwijder padding */
+  display: flex; /* Zorg voor een flexibele indeling van de links */
+  align-items: center;
+  justify-content: center;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+  margin: 0 15px; /* Ruimte tussen de links */
 }
 
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
+  color: white; /* Kleur van de links */
+  text-decoration: none; /* Verwijder onderstreping */
 }
 
 nav ul li a:hover {
-    color: #102946;
-    text-decoration: none;
-    font-weight: bold;
+  color: #102946; /* Hover kleur */
+  font-weight: normal; /* Vetgedrukt bij hover */
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Voeg een subtiele schaduw toe */
 }
 
 section {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.intro, .portfolio, .contact {
-    margin-bottom: 40px;
+.intro,
+.portfolio,
+.contact {
+  margin-bottom: 40px;
 }
 
 .portfolio img {
-    max-width: 100%;
-    height: auto;
-    border: 1px solid #ddd;
-    
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
 }
 
-.portfolio .gip {
-    max-width: 100%;
-    height: auto;
-    border: 2px solid #2a66aa;
-    width: 30%;
-    box-shadow: 5px 5px 5px 5px grey;
+section .foto {
+  max-width: 100%;
+  height: auto;
+  width: 50%;
+  box-shadow: 2px 2px 2px 2px grey;
 }
-
 
 footer {
-    background-color: #2a66aa;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+  background-color: #2a66aa;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+}
+
+.contact #mail, .contact #linkedin {
+  font-size: 30px; /* Pas deze waarde aan voor grotere iconen */
+  margin: 0 5px; /* Ruimte tussen de iconen */
+  color: inherit; /* Zorg ervoor dat de kleur overgenomen wordt van de ouder */
+  text-decoration: none; /* Verwijder de onderstreping van de link */
+}
+
+.contact #mail:hover {
+  color: #ffcc00; /* Voeg een hover kleur toe */
+}
+
+.contact #linkedin:hover {
+  color: #ffcc00; /* Voeg een hover kleur toe */
+}
+
+/* PORTFOLIOL */
+.collapsible {
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  transition: background-color 0.3s;
+}
+
+.collapsible:hover {
+  background-color: #3f3f3f; /* Hover effect */
+}
+
+.collapsible:after {
+  content: "\002B"; /* Plus teken als default */
+  color: white;
+  float: right;
+}
+
+.collapsible.active:after {
+  content: "\2212"; /* Min teken als actief */
+}
+
+.content {
+  padding: 0 25px;
+  max-height: 0; /* Start met max-height op 0 */
+  overflow: hidden; /* Verberg inhoud buiten de box */
+  background-color: #f3eded;
+  border: 1px solid #9e9c9c;
+  border-radius: 5px;
+  margin-top: 5px;
+  transition: max-height 0.5s ease; /* Animatie voor max-height */
+  max-width: 100%;
+}
+
+.content ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.content ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.content ul li:last-child {
+  border-bottom: none;
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+li i {
+    margin-right: 10px; /* Ruimte tussen het icoon en de tekst */
+}
+
+a {
+    text-decoration: none;
+    color: #102946;
+}
+
+.contact{
+
 }
