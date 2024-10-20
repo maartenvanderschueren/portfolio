@@ -6,11 +6,59 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #2a66aa;
     color: #fff;
     padding: 20px 0;
     text-align: center;
 }
+
+.collapsible {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.collapsible:after {
+    content: '\002B'; /* Plus teken als default */
+    color: white;
+    float: right;
+}
+
+.collapsible.active:after {
+    content: "\2212"; /* Min teken als actief (uitgeklapt) */
+}
+
+.content {
+    padding: 0 15px;
+    display: none;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.content ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.content ul li:last-child {
+    border-bottom: none;
+}
+
 
 header h1 {
     margin: 0;
@@ -31,6 +79,12 @@ nav ul li a {
     text-decoration: none;
 }
 
+nav ul li a:hover {
+    color: #102946;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 section {
     padding: 20px;
     max-width: 1200px;
@@ -45,10 +99,20 @@ section {
     max-width: 100%;
     height: auto;
     border: 1px solid #ddd;
+    
 }
 
+.portfolio .gip {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #2a66aa;
+    width: 30%;
+    box-shadow: 5px 5px 5px 5px grey;
+}
+
+
 footer {
-    background-color: #333;
+    background-color: #2a66aa;
     color: #fff;
     text-align: center;
     padding: 10px 0;
