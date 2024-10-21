@@ -41,3 +41,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.getElementById('leeftijd').textContent = berekenLeeftijd(geboortedatum);
 
+document.addEventListener("DOMContentLoaded", function() {
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navbar = document.getElementById("navbar");
+  
+    mobileMenu.addEventListener("click", () => {
+      navbar.classList.toggle("navbar-active"); // Voeg de class toe of verwijder deze
+    });
+  });
+  
