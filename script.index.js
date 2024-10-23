@@ -17,6 +17,8 @@ function berekenLeeftijd(geboortedatum) {
     return leeftijd;
 }
 
+const geboortedatum = new Date(2004, 7, 17); // Maand is 0-indexed, dus 7 = augustus
+
 document.addEventListener('DOMContentLoaded', function() {
     var coll = document.querySelectorAll('.collapsible');
 
@@ -33,6 +35,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+document.getElementById('leeftijd').textContent = berekenLeeftijd(geboortedatum);
 
 document.addEventListener("DOMContentLoaded", function() {
     var mobileMenu = document.getElementById("mobile-menu");
