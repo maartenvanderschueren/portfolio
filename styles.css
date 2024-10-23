@@ -3,6 +3,8 @@
 html, body {
   height: 100%;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -198,6 +200,24 @@ footer {
 .content ul li:last-child {
   border-bottom: none;
 }
+
+.Vaardigheden{
+  font-weight: bold;
+  font-style: normal;
+  margin-left: 15px;
+}
+
+.Vaardigheden i{
+  font-weight: bold;
+  font-style: normal;
+}
+
+.Vaardigheden ul li {
+  font-weight: bold;
+  margin-left: 10px;
+  font-style: normal;
+}
+
 
 ul {
   list-style-type: none;
