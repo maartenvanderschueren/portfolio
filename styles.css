@@ -345,7 +345,7 @@ a {
     flex-direction: column; 
     width: 100%; 
     position: absolute; /* Maak de navigatie absoluut gepositioneerd */
-    top: 52px; /* Plaats het direct onder de header */
+    top: 45px; /* Plaats het direct onder de header */
     left: 0; /* Zet het aan de linkerkant */
     background-color: rgb(222, 224, 227); /* Zorg voor een achtergrondkleur */
   }
