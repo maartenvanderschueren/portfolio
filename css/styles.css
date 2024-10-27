@@ -97,7 +97,9 @@ nav ul li a:hover {
 #about {
   display: flex;
   align-items: center; /* Om de foto en de tekst verticaal uit te lijnen */
+  margin: auto;
 }
+
 
 #about .foto {
   max-width: 70%; /* Pas de grootte van de foto aan */
@@ -117,6 +119,7 @@ nav ul li a:hover {
 #about .about-text {
   display: grid;
   grid-column: auto;/* Zorgt ervoor dat h2 en p onder elkaar staan */
+  max-width: 1080px;
 }
 
 #about h2, .header2 {
@@ -147,6 +150,7 @@ footer {
   color: white;
   cursor: pointer;
   padding: 15px;
+  max-width: 1280px;
   width: 100%;
   text-align: left;
   border: none;
@@ -158,8 +162,7 @@ footer {
 }
 
 .collapsible-section {
-  margin: 20px;
-
+  margin: 15px;
 }
 
 .collapsible:hover {
@@ -177,18 +180,19 @@ footer {
 }
 
 .content {
-  padding: 0 25px;
+  max-width: 1280px;
   max-height: 0;
   overflow: hidden;
   background-color: #f3eded;
   border: 1px solid #9e9c9c;
   border-radius: 5px;
-  margin-top: 5px;
+  margin: 5px;
   transition: max-height 0.5s ease;
 }
 
 .content ul {
   list-style-type: none;
+  margin: 15px;
   padding-left: 0;
 }
 
