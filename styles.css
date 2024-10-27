@@ -218,8 +218,13 @@ footer {
 
 .Vaardigheden ul li {
   font-weight: bold;
-  margin-left: 10px;
+  margin: 10px;
   font-style: normal;
+
+}
+
+.Vaardigheden ul li i {
+  margin: 10px;
 }
 
 
@@ -370,6 +375,11 @@ a {
   #about .about-text {
     align-items: center;
     margin: 0 0;
+  }
+
+ .Vaardigheden {
+    max-width: 100%;
+    margin-right: 15px;
   }
 
   .content img{
