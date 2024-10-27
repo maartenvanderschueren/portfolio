@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Portfolio van Maarten" />
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
     <title>Portfolio - Maarten Van der Schueren</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
   </head>
   <body>
     <header>
@@ -17,8 +18,8 @@
   
       <nav id="navbar">
         <ul>
-          <li><a href="index.html">Over Mij</a></li>
-          <li><a href="about.html">Portfolio</a></li>
+          <li><a href="../index.html">Over Mij</a></li>
+          <li><a class="selected" href="#">Portfolio</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li>
             <a id="linkedin" href="https://www.linkedin.com/in/maartenvds" target="_blank">
@@ -42,7 +43,7 @@
                 <p>Binnen de richting Elektromechanica werden we uitgedaagd om in het laatste jaar een GIP te maken, hierbij toon je wat je kan. Op onderstaande afbeelding zien we een 3D model van mijn uitwerking hiervan. Hier hebben we een vicieuze transportband
                     gemaakt met verschillende functies. Het gebruik van cilinders, vacuüm zuignappen, drukknoppen en een transportband zijn hierbij getoond. 
                 </p>
-                <img src="./img/Afbeelding1.png" alt="Project 1" class="gip"/>
+                <img src="../img/Afbeelding1.png" alt="Project 1" class="gip"/>
                 </div>
             </ul>
         </div>
@@ -66,50 +67,81 @@
       </div>
     </section>
     <section class="Vaardigheden">
+    <h2 class="header2">Talen</h2>
+      <ul>
+        <li>
+          <i class="soort">Nederlands</i>
+          <span class="goed">
+              Moedertaal
+          </span>
+        </li>
+        <li>
+          <i class="soort">Engels</i>
+          <span class="goed">
+            Ruim voldoende
+          </span>
+        </li>
+        <li>
+          <i class="soort">Frans</i>
+          <span class="matig">
+            Matig
+          </span>
+        </li>
+      </ul>
       <h2 class="header2">Vaardigheden</h2>
-    <ul>
-      <li>
-        <i class="soort">Python</i>
-        <span class="stars">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="far fa-star"></i>
-          <i class="far fa-star"></i>
-        </span>
-      </li>
-      <li>
-        <i class="soort">SQL</i>
-        <span class="stars">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="far fa-star"></i>
-          <i class="far fa-star"></i>
-        </span>
-      </li>
-      <li>
-        <i class="soort">Linux</i>
-        <span class="stars">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="far fa-star"></i>
-        </span>
-      </li>
-    </ul>
-    <h2 class="header2">Behaalde diploma's & certificaten</h2>
-    <ul>
-      <li class="soort">Elektromechanica 3de graad <a href="./img/Diploma secundair.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-regular fa-eye"></i></a></li>
-      <li class="soort">VCA Basisveiligheid <a href="./img/VCA attest.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-regular fa-eye"></i></a></li>
-    </ul>
+      <ul>
+        <li>
+          <i class="soort">Machine Learning</i>
+          <span class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </span>
+        </li>
+        <li>
+          <i class="soort">Databases</i>
+          <span class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+          </span>
+        </li>
+        <li>
+          <i class="soort">Operating Systems</i>
+          <span class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </span>
+        </li>
+        <li>
+          <i class="soort">Web development</i>
+          <span class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+          </span>
+        </li>
+      </ul>
+      <h2 class="header2">Behaalde diploma's & certificaten</h2>
+        <ul>
+          <li class="soort">Elektromechanica 3de graad <a href="../img/Diploma secundair.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-regular fa-eye"></i></a></li>
+          <li class="soort">VCA Basisveiligheid <a href="../img/VCA attest.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-regular fa-eye"></i></a></li>
+        </ul>
   </section>
 
     <footer>
       <p>&copy; 2024 Maarten Van der Schueren. Alle rechten voorbehouden.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="../scripts/script.js"></script>
   </body>
 </html>
