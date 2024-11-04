@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 :root {
-  --backgroundCol : rgb(10, 25, 47);
+  --backgroundCol : linear-gradient(to right, #0b285a 0%, #1e3c72 50%, #0b285a 100%);
   --text-kleur: whitesmoke;
   --navtext-color: whitesmoke;
   --vaardigheden-kleur: #0f294f;
@@ -19,7 +19,7 @@ body::-webkit-scrollbar {
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: var(--backgroundCol);
+  background-image: linear-gradient(to right, #0b285a 0%, #1e3c72 50%, #0b285a 100%);
   color: var(--text-kleur);
   display: flex;
   flex-direction: column;
@@ -133,6 +133,7 @@ nav ul li a:hover {
 #about {
   display: flex;
   align-items: center; /* Om de foto en de tekst verticaal uit te lijnen */
+  margin: auto;
 }
 
 #about .foto {
@@ -213,6 +214,8 @@ footer {
   border-radius: 5px;
   margin-top: 5px;
   transition: max-height 0.5s ease;
+}
+
 .python {
   grid-column-start: 1;
   grid-row-start: 1;
@@ -227,6 +230,8 @@ footer {
 .content ul {
   list-style-type: none;
   padding-left: 0;
+}
+
 .js{
   grid-column-start: 3;
   grid-row-start: 1;
@@ -283,11 +288,11 @@ li i {
 
 .fadingBackground {
   margin: auto;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 1rem;
   display: grid;
   color: var(--text-kleur);
   background-color: var(--vaardigheden-kleur);
+  /* background-image: linear-gradient(to right, #243949 0%, #517fa4 100%); */
   border-radius: 10px;
   padding: 5px;
   max-width: 50%;
@@ -359,12 +364,11 @@ li i {
 /* Contacteren */
 form {
   max-width: 100%;
+  width: 30%;
   margin: auto;
   padding: 20px;
-  border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #f9f9f9;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 label {
@@ -375,15 +379,19 @@ input[type="text"],
 input[type="email"],
 textarea {
   width: 100%;
+  height: 10%;
+  color: rgb(255, 255, 255);
   padding: 5px;
   margin-bottom: 10px;
+  background-color: #cccccc49;
   border: 1px solid #ccc;
+  box-shadow: 2px 2px 4px whitesmoke;
   border-radius: 4px;
 }
 
 input[type="submit"] {
   background-color: #4CAF50;
-  color: white;
+  color: rgb(255, 255, 255);
   border: none;
   padding: 15px 15px;
   cursor: pointer;
@@ -470,6 +478,47 @@ input[type="submit"]:hover {
     text-decoration: none;
   }  
 
+  .python {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    transform: scale(5);
+    width: 100%;
+    height: 100%;
+
+  }
+  
+  .sql{
+    grid-column-start: 2;
+    grid-row-start: 1;
+  }
+  
+  .content ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .js{
+    grid-column-start: 3;
+    grid-row-start: 1;
+  }
+  
+  .linux{
+    grid-column-start: 2;
+    grid-row-start: 2;
+    transform: scale(1.5);
+  
+  }
+  
+  .docker {
+    grid-column-start: 1;
+    grid-row-start: 2;
+  }
+  
+  .git {
+    grid-column-start: 3;
+    grid-row-start: 2;
+  }
+
 }
 
 @media (max-width: 768px) { 
@@ -499,6 +548,8 @@ input[type="submit"]:hover {
     font-size: 10px;
     margin: auto;
   }
+
+  
 }
 
 @media (max-width: 480px) {
