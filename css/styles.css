@@ -136,6 +136,7 @@ nav ul li a:hover {
   margin: auto;
 }
 
+
 #about .foto {
   max-width: 70%; /* Pas de grootte van de foto aan */
   width: 400px;
@@ -156,6 +157,7 @@ nav ul li a:hover {
   grid-column: auto;/* Zorgt ervoor dat h2 en p onder elkaar staan */
   max-width: 1080px;
   color: var(--text-kleur);
+
 }
 
 .header2 {
@@ -206,13 +208,13 @@ footer {
 }
 
 .content {
-  padding: 0 25px;
+  max-width: 1280px;
   max-height: 0;
   overflow: hidden;
   background-color: #f3eded;
   border: 1px solid #9e9c9c;
   border-radius: 5px;
-  margin-top: 5px;
+  margin: 5px;
   transition: max-height 0.5s ease;
 }
 
@@ -229,6 +231,7 @@ footer {
 
 .content ul {
   list-style-type: none;
+  margin: 15px;
   padding-left: 0;
 }
 
