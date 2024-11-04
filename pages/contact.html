@@ -8,8 +8,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Portfolio - Maarten Van der Schueren</title>
     <link rel="stylesheet" href="../css/styles.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "NJF2_5hKciRh5mvMq",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_34lk6ib', 'template_bkir71h', this)
+                    .then(() => {
+                        console.log('SUCCESS!');
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
   </head>
-  <body>
+  <body class="fade-in">
     <header>
     <h1>Maarten Van der Schueren</h1>
     <div class="menu-toggle" id="mobile-menu">
@@ -20,7 +43,6 @@
       <ul>
         <li><a href="../index.html">Over Mij</a></li>
         <li><a href="./about.html">Portfolio</a></li>
-        <li ><a class="selected" href="#">Contact</a></li>
         <li>
           <a id="linkedin" href="https://www.linkedin.com/in/maartenvds" target="_blank">
             <i class="fab fa-linkedin"></i>
@@ -31,23 +53,45 @@
             <i class="fas fa-envelope"></i>
           </a>
         </li>
+        <li>
+          <a id="mail" href="#">
+            <i class="fas fa-address-card"></i>
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
-
-    <div id="contact" class="contact">
-        <h2 class="header2">Contactgegevens</h2>
-            <ul>
-              <li><i class="fas fa-envelope"></i> <strong>E-mail:<i></i> </strong> <a href="mailto:maarten.vanderschueren@student.hogent.be">maarten.vanderschueren@student.hogent.be</a></li>
-              <li><i class="fab fa-linkedin"></i> <strong>LinkedIn:<i></i></strong> <a href="https://www.linkedin.com/in/maartenvds" target="_blank">Volg mij op LinkedIn</a></li>
-            </ul>
-    </div>
   
+  <form id="contact-form" method="post">
+        <h2>Contact</h2>
+
+        <label for="name">Naam:</label>
+        <input type="text" id="name" name="user_name" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="user_email" required>
+
+        <label for="subject">Onderwerp:</label>
+        <input type="text" id="subject" name="subject">
+
+        <label for="message">Bericht:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <input type="submit" value="Verzenden">
+    </form>
+    <div id="contact" class="contact">
+          <ul>
+            <li><i class="fas fa-envelope"></i> <strong>E-mail: (school)<i></i> </strong> <a href="mailto:maarten.vanderschueren@student.hogent.be">maarten.vanderschueren@student.hogent.be</a></li>
+            <!-- <li><i class="fas fa-envelope"></i> <strong>E-mail (privé):<i></i> </strong> <a href="mailto:maarten.vanderschueren@telenet.be">maarten.vanderschueren@telenet.be</a></li> -->
+            <li><i class="fab fa-linkedin"></i> <strong>LinkedIn:<i></i></strong> <a href="https://www.linkedin.com/in/maartenvds" target="_blank">Volg mij op LinkedIn</a></li>
+          </ul>
+  </div>
 
     <footer>
       <p>&copy; 2024 Maarten Van der Schueren. Alle rechten voorbehouden.</p>
     </footer>
 
     <script src="../scripts/script.js"></script>
+    <script>src="../scripts/send_mail.php"</script>
   </body>
 </html>

@@ -9,9 +9,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
-<body>
+<body class="fade-in">
   <header>
-    <h1>Maarten Van der Schueren</h1>
     <div class="menu-toggle" id="mobile-menu">
       <i class="fas fa-bars"></i>
     </div>
@@ -19,8 +18,7 @@
     <nav id="navbar">
       <ul>
         <li><a class="selected" href="#">Over Mij</a></li>
-        <li><a href="./pages/about.html">Portfolio</a></li>
-        <li><a href="./pages/contact.html">Contact</a></li>
+        <li><a class="nav-link" href="./pages/about.html">Portfolio</a></li>
         <li>
           <a id="linkedin" href="https://www.linkedin.com/in/maartenvds" target="_blank">
             <i class="fab fa-linkedin"></i>
@@ -31,19 +29,23 @@
             <i class="fas fa-envelope"></i>
           </a>
         </li>
+        <li>
+          <a id="mail" href="./pages/contact.html">
+            <i class="fas fa-address-card"></i>
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
 
   <section id="about" class="intro">
     <img src="./img/maarten.jpg" alt="Maarten Van der Schueren" class="foto" />
-    <div class="about-text">
-      <h2>Over Mij</h2>
-      <p>
-        Hallo! Ik ben Maarten Van der Schueren, <span id="leeftijd"></span> jaar oud en gepassioneerd door technologie. In mijn studie Toegepaste informatica leer ik veel bij over AI & Data beheer, dit is namelijk niet meer weg te denken in deze technologische wereld. In het secundair onderwijs heb ik mijn diploma in Elektromechanica behaald, omdat ik geloof dat de combinatie van technologie en industrie tot grote innovaties kan leiden.
-      </p>
-    </div>
-    
+      <div class="about-text">
+        <h2 class="NaamHeader">Maarten Van der Schueren</h2>
+        <p>
+          Ik ben <span id="leeftijd"></span> jaar en heb een passie voor technologie. In mijn studie Toegepaste Informatica verdiep ik me in AI en databeheer, essentiële elementen in de wereld van vandaag. Met mijn achtergrond in Elektromechanica wil ik technologie en industrie samenbrengen om bij te dragen aan de innovaties van morgen.
+        </p>
+      </div>
   </section>
 
   <footer>

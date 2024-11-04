@@ -41,5 +41,40 @@ document.addEventListener("DOMContentLoaded", function() {
     mobileMenu.addEventListener("click", () => {
       navbar.classList.toggle("navbar-active");
     });
+});
+  
+
+var slideIndex = 1;
+showDivs(slideIndex);
+  
+function plusDivs(n) {
+showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+var i;
+var slides = document.getElementsByClassName("slideBox");
+if (n > slides.length) {slideIndex = 1}
+if (n < 1) {slideIndex = slides.length} ;
+
+for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+
+}
+slides[slideIndex-1].style.display = "block";
+}
+
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function (event) {
+      event.preventDefault(); // voorkomt onmiddellijk navigeren
+  
+      // Voegt fade-out class toe aan de body
+      document.body.classList.add('fade-out');
+  
+      // Wacht tot de animatie eindigt voordat je naar de nieuwe pagina gaat
+      setTimeout(() => {
+        window.location.href = this.href;
+      }, 500); // tijd moet overeenkomen met de duur van de fade-out animatie
+    });
   });
   

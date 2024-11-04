@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+:root {
+  --backgroundCol : linear-gradient(to right, #0b285a 0%, #1e3c72 50%, #0b285a 100%);
+  --text-kleur: whitesmoke;
+  --navtext-color: whitesmoke;
+  --vaardigheden-kleur: #0f294f;
+}
 
 html, body {
   height: 100%;
@@ -13,21 +19,44 @@ body::-webkit-scrollbar {
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f7f4f4;
+  background-image: linear-gradient(to right, #0b285a 0%, #1e3c72 50%, #0b285a 100%);
+  color: var(--text-kleur);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  transition: 2s ease;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnimation 0.3s forwards; /* Duur van fade-in animatie */
+}
+
+@keyframes fadeInAnimation {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Fade-out animatie voor bij het verlaten van de pagina */
+.fade-out {
+  opacity: 1;
+  animation: fadeOutAnimation 0.5s forwards; /* Duur van fade-out animatie */
+}
+
+@keyframes fadeOutAnimation {
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
 
 header {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 70px repeat(1, 1fr);
   align-items: center;
-  background-color: #dee0e3;
-  color: rgb(108, 105, 105);
+  height: 70px;
+  background-color: var(--backgroundCol);
+  color: var(--text-kleur);
   justify-content: space-between;
-  border-bottom: 2px solid grey;
-  
 }
 
 header #linkedin, header #mail {
@@ -42,7 +71,8 @@ header #linkedin:hover, header #mail:hover {
 }
 
 header h1 {
-  margin: 10px;
+  grid-row: 1;
+  grid-column: 1;
   padding-left: 20px;
   font-size: 25px;
   transition: 0.3s;
@@ -55,7 +85,8 @@ header h1 {
 }
 
 nav {
-  display: flex;
+  grid-row: 1;
+  grid-column: 2;
 }
 
 nav ul {
@@ -71,28 +102,33 @@ nav ul li {
 }
 
 nav ul li .selected {
-  color: rgb(69, 68, 68);
+  color: var(--navtext-color);
 }
 
 nav ul li a {
   text-decoration: none;
   font-weight: bolder;
-  color: #92969a;
+  color: var(--text-kleur);
 }
 
 nav ul li a:hover {
-  color: rgb(69, 68, 68);
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  color: #51829B;
 }
 
 .contact {
   margin: auto;
+  max-height: 100%;
   text-align: center;
   align-items: center;
   display: flex;
   flex-direction: column;
+  color: var(--text-kleur);
 }
 
+.contact a, .contact li, .contact h2 {
+  color: var(--text-kleur);
+  text-decoration: none;
+}
 
 #about {
   display: flex;
@@ -103,7 +139,7 @@ nav ul li a:hover {
 
 #about .foto {
   max-width: 70%; /* Pas de grootte van de foto aan */
-  width: 500px;
+  width: 400px;
   max-height: 100%;
   flex-shrink: 0; /* Zorg ervoor dat de foto niet verkleint */
   border-radius: 50%;
@@ -113,28 +149,35 @@ nav ul li a:hover {
 
 #about p {
   flex-grow: 1; /* De tekst vult de resterende ruimte */
-  margin-right: 50px;
+  margin-right: 150px;
 }
 
 #about .about-text {
   display: grid;
   grid-column: auto;/* Zorgt ervoor dat h2 en p onder elkaar staan */
   max-width: 1080px;
+  color: var(--text-kleur);
+
 }
 
-#about h2, .header2 {
+.header2 {
   background-color: #51829B;
   box-shadow: 5px 3px 3px rgb(190, 189, 189);
-  color: rgb(244, 242, 242);
+  color: var(--text-kleur);
   max-width: fit-content;
   border-radius: 10px;
   padding: 10px;
   font-size: large;
 }
 
+.NaamHeader {
+  font-size: 30px;
+  margin: 10px;
+}
+
 footer {
-  background-color: #dee0e3;
-  color: rgb(69, 68, 68);;
+  background-color: var(--backgroundCol);
+  color: var(--text-kleur);
   text-align: center;
   padding: 10px 0;
   width: 100%;
@@ -145,38 +188,23 @@ footer {
   text-align: center;
 }
 
-.collapsible {
-  background-color: #333;
-  color: white;
-  cursor: pointer;
-  padding: 15px;
-  max-width: 1280px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  font-size: 18px;
-  border-radius: 10px;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  transition: background-color 0.3s;
+.slideBox {
+  align-items: center;
 }
 
-.collapsible-section {
-  margin: 15px;
+.parent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 50px;
+  margin: 40px;
+
 }
 
-.collapsible:hover {
-  background-color: #3f3f3f;
-}
-
-.collapsible:after {
-  content: "\002B";
-  color: white;
-  float: right;
-}
-
-.collapsible.active:after {
-  content: "\2212";
+.parent div {
+  display: flex;
+  justify-content: center; /* Horizontaal centreren */
+  align-items: center; /* Verticaal centreren */
 }
 
 .content {
@@ -190,33 +218,47 @@ footer {
   transition: max-height 0.5s ease;
 }
 
+.python {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  transform: scale(2);
+}
+
+.sql{
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
 .content ul {
   list-style-type: none;
   margin: 15px;
   padding-left: 0;
 }
 
-.content ul li {
-  padding: 10px 0;
-  border-top: 1px solid #ccc;
+.js{
+  grid-column-start: 3;
+  grid-row-start: 1;
 }
 
-.content img{
-  width: 20%;
+.linux{
+  grid-column-start: 2;
+  grid-row-start: 2;
+  transform: scale(1.5);
+
 }
 
-.collapsible-section .soort{
-  font-weight: bold;
-  font-style: normal;
+.docker {
+  grid-column-start: 1;
+  grid-row-start: 2;
 }
 
-.content ul li:last-child {
-  border-bottom: none;
+.git {
+  grid-column-start: 3;
+  grid-row-start: 2;
 }
 
 .Vaardigheden{
   font-style: normal;
-  margin-left: 15px;
 }
 
 .Vaardigheden i{
@@ -247,9 +289,50 @@ li i {
   margin-right: 10px;
 }
 
-a {
-  text-decoration: none;
-  color: #000000;
+.fadingBackground {
+  margin: auto;
+  margin-top: 1rem;
+  display: grid;
+  color: var(--text-kleur);
+  background-color: var(--vaardigheden-kleur);
+  /* background-image: linear-gradient(to right, #243949 0%, #517fa4 100%); */
+  border-radius: 10px;
+  padding: 5px;
+  max-width: 50%;
+  justify-items: center;
+  border: solid wheat;
+  box-shadow: inset 2px 2px 4px #51829B;
+
+}
+
+.fadingBackground img{
+  width: 20%;
+}
+
+.fadingBackground ul {
+  display: grid;
+  padding: 0%;
+  margin: 15px;
+}
+
+.fadingBackground ul img {
+  margin: auto;
+}
+
+.w3-button {
+  background-color: transparent;
+  color: whitesmoke;
+  border: 0;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.w3-display-right { 
+  grid-column: 3;
+}
+
+.fadingBackground ul {
+  margin-top: 0;
 }
 
 .stars {
@@ -281,16 +364,64 @@ a {
   display: flex !important; /* Toestaan dat de navigatie zichtbaar is */
 }
 
+/* Contacteren */
+form {
+  max-width: 100%;
+  width: 30%;
+  margin: auto;
+  padding: 20px;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  height: 10%;
+  color: rgb(255, 255, 255);
+  padding: 5px;
+  margin-bottom: 10px;
+  background-color: #cccccc49;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 4px whitesmoke;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 15px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+
+
 /* Media Queries voor Responsiviteit */
 @media (max-width: 1024px) {
   header{
-    max-height: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 44px repeat(1, 1fr);
     max-width: 100%;
+    justify-content: flex-end;
   }
 
   .menu-toggle {
-    display: block; /* Toon het hamburgericoon op kleinere schermen */
+    display: grid; /* Toon het hamburgericoon op kleinere schermen */
     margin-right: 50px;
+    grid-row: 1;
+    grid-column: 2;
   }
 
   nav {
@@ -298,9 +429,9 @@ a {
     flex-direction: column; 
     width: 100%; 
     position: absolute; /* Maak de navigatie absoluut gepositioneerd */
-    top: 60px; /* Plaats het direct onder de header */
+    top: 65px; /* Plaats het direct onder de header */
     left: 0; /* Zet het aan de linkerkant */
-    background-color: rgb(222, 224, 227); /* Zorg voor een achtergrondkleur */
+    background-color: var(--backgroundCol); /* Zorg voor een achtergrondkleur */
   }
 
   nav ul {
@@ -312,6 +443,17 @@ a {
   nav ul li {
     margin: 8px 8px; /* Voeg marge toe tussen items */
     max-width: 100;
+  }
+
+  .fadingBackground {
+    max-width: 80%;
+    font-size: 10px;
+  }
+
+  .fadingBackground ul {
+    max-width: 90%;
+    font-size: 10px;
+    margin: 10px;
   }
 
   #about{
@@ -336,20 +478,101 @@ a {
   .contact {
     font-size: 15px;
     max-width: 100%;
-    color: inherit;
     text-decoration: none;
   }  
 
+  .python {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    transform: scale(5);
+    width: 100%;
+    height: 100%;
+
+  }
+  
+  .sql{
+    grid-column-start: 2;
+    grid-row-start: 1;
+  }
+  
+  .content ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .js{
+    grid-column-start: 3;
+    grid-row-start: 1;
+  }
+  
+  .linux{
+    grid-column-start: 2;
+    grid-row-start: 2;
+    transform: scale(1.5);
+  
+  }
+  
+  .docker {
+    grid-column-start: 1;
+    grid-row-start: 2;
+  }
+  
+  .git {
+    grid-column-start: 3;
+    grid-row-start: 2;
+  }
+
+}
+
+@media (max-width: 768px) { 
+
+  header{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 44px repeat(1, 1fr);
+    max-width: 100%;
+    justify-content: flex-end;
+  }
+
+  .menu-toggle {
+    display: grid; /* Toon het hamburgericoon op kleinere schermen */
+    margin-right: 50px;
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .fadingBackground {
+    max-width: 80%;
+    font-size: 8px;
+  }
+
+  .fadingBackground ul {
+    max-width: 100%;
+    font-size: 10px;
+    margin: auto;
+  }
+
+  
 }
 
 @media (max-width: 480px) {
   header{
-    max-height: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 44px repeat(1, 1fr);
+    height: 44px;
     max-width: 100%;
+    justify-content: flex-end;
+  }
+
+  .menu-toggle {
+    display: grid; /* Toon het hamburgericoon op kleinere schermen */
+    margin-right: 50px;
+    grid-row: 1;
+    grid-column: 2;
   }
 
   header h1 {
-    margin: 10px;
     padding-left: 20px;
     font-size: 15px;
     transition: 0.3s;
@@ -368,7 +591,6 @@ a {
     position: absolute; /* Maak de navigatie absoluut gepositioneerd */
     top: 45px; /* Plaats het direct onder de header */
     left: 0; /* Zet het aan de linkerkant */
-    background-color: rgb(222, 224, 227); /* Zorg voor een achtergrondkleur */
   }
 
   nav ul {
@@ -412,12 +634,11 @@ a {
 
 @media (max-width: 200px) {
   header{
-    max-height: 100%;
+    height: 44px;
     max-width: 100%;
   }
 
   header h1 {
-    margin: 10px;
     padding-left: 20px;
     font-size: 15px;
     transition: 0.3s;
@@ -425,7 +646,7 @@ a {
   }
 
   .menu-toggle {
-    display: block; /* Toon het hamburgericoon op kleinere schermen */
+    display: block;
     margin-right: 15px;
   }
 
@@ -433,10 +654,9 @@ a {
     display: none; 
     flex-direction: column; 
     width: 100%; 
-    position: absolute; /* Maak de navigatie absoluut gepositioneerd */
-    top: 44px; /* Plaats het direct onder de header */
-    left: 0; /* Zet het aan de linkerkant */
-    background-color: rgb(222, 224, 227); /* Zorg voor een achtergrondkleur */
+    position: absolute;
+    top: 44px; 
+    left: 0;
   }
 
   nav ul {
