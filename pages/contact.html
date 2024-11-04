@@ -9,7 +9,7 @@
     <title>Portfolio - Maarten Van der Schueren</title>
     <link rel="stylesheet" href="../css/styles.css" />
   </head>
-  <body>
+  <body class="fade-in">
     <header>
     <h1>Maarten Van der Schueren</h1>
     <div class="menu-toggle" id="mobile-menu">
@@ -20,7 +20,6 @@
       <ul>
         <li><a href="../index.html">Over Mij</a></li>
         <li><a href="./about.html">Portfolio</a></li>
-        <li ><a class="selected" href="#">Contact</a></li>
         <li>
           <a id="linkedin" href="https://www.linkedin.com/in/maartenvds" target="_blank">
             <i class="fab fa-linkedin"></i>
@@ -31,17 +30,39 @@
             <i class="fas fa-envelope"></i>
           </a>
         </li>
+        <li>
+          <a id="mail" href="#">
+            <i class="fas fa-address-card"></i>
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
 
-    <div id="contact" class="contact">
-        <h2 class="header2">Contactgegevens</h2>
-            <ul>
-              <li><i class="fas fa-envelope"></i> <strong>E-mail:<i></i> </strong> <a href="mailto:maarten.vanderschueren@student.hogent.be">maarten.vanderschueren@student.hogent.be</a></li>
-              <li><i class="fab fa-linkedin"></i> <strong>LinkedIn:<i></i></strong> <a href="https://www.linkedin.com/in/maartenvds" target="_blank">Volg mij op LinkedIn</a></li>
-            </ul>
-    </div>
+  <div id="contact" class="contact">
+      <h2>Contactgegevens</h2>
+          <ul>
+            <li><i class="fas fa-envelope"></i> <strong>E-mail:<i></i> </strong> <a href="mailto:maarten.vanderschueren@student.hogent.be">maarten.vanderschueren@student.hogent.be</a></li>
+            <li><i class="fab fa-linkedin"></i> <strong>LinkedIn:<i></i></strong> <a href="https://www.linkedin.com/in/maartenvds" target="_blank">Volg mij op LinkedIn</a></li>
+          </ul>
+  </div>
+
+  <h2>Neem Contact Op</h2>
+    <form action="#" method="post">
+        <label for="name">Naam:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="subject">Onderwerp:</label>
+        <input type="text" id="subject" name="subject">
+
+        <label for="message">Bericht:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <input type="submit" value="Verzenden">
+    </form>
   
 
     <footer>
