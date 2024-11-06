@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 :root {
   --backgroundCol : linear-gradient(to right, #0b285a 0%, #1e3c72 50%, #0b285a 100%);
+  --backgroundNav : #0b285a;
   --text-kleur: whitesmoke;
   --navtext-color: whitesmoke;
   --vaardigheden-kleur: #0f294f;
@@ -430,9 +431,9 @@ input[type="submit"]:hover {
     flex-direction: column; 
     width: 100%; 
     position: absolute; /* Maak de navigatie absoluut gepositioneerd */
-    top: 65px; /* Plaats het direct onder de header */
+    top: 60px; /* Plaats het direct onder de header */
     left: 0; /* Zet het aan de linkerkant */
-    background-color: var(--backgroundCol); /* Zorg voor een achtergrondkleur */
+    background-image: var(--backgroundCol); /* Zorg voor een achtergrondkleur */
   }
 
   nav ul {
