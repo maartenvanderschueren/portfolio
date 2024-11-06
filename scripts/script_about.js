@@ -1,22 +1,3 @@
-
-// Functie om leeftijd te berekenen
-function berekenLeeftijd(geboortedatum) {
-    const vandaag = new Date();
-    const geboortejaar = geboortedatum.getFullYear();
-    const geboortemaand = geboortedatum.getMonth();
-    const geboortedag = geboortedatum.getDate();
-
-    let leeftijd = vandaag.getFullYear() - geboortejaar;
-    const isVerjaardagVoorbij = (vandaag.getMonth() > geboortemaand) || 
-                                (vandaag.getMonth() === geboortemaand && vandaag.getDate() >= geboortedag);
-
-    if (!isVerjaardagVoorbij) {
-        leeftijd--;
-    }
-
-    return leeftijd;
-}
-
 document.addEventListener('DOMContentLoaded', function() {
     var coll = document.querySelectorAll('.collapsible');
 
@@ -76,5 +57,14 @@ document.querySelectorAll('.nav-link').forEach(link => {
         window.location.href = this.href;
       }, 500); // tijd moet overeenkomen met de duur van de fade-out animatie
     });
-  });
+});
+
+
+window.onload = function() {
+// Jouw code die je wil uitvoeren bij het laden van de pagina
+    console.log("Pagina is volledig geladen!");
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("content").style.display = "block";
+   
+};
   

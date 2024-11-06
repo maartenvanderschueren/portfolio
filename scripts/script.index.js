@@ -1,5 +1,3 @@
-
-// Functie om leeftijd te berekenen
 function berekenLeeftijd(geboortedatum) {
     const vandaag = new Date();
     const geboortejaar = geboortedatum.getFullYear();
@@ -46,5 +44,25 @@ document.addEventListener("DOMContentLoaded", function() {
     mobileMenu.addEventListener("click", () => {
       navbar.classList.toggle("navbar-active");
     });
-  });
+});
   
+var myVar;
+
+function myFunction() {
+myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+document.getElementById("loader").style.display = "none";
+document.getElementById("myDiv").style.display = "block";
+}
+
+window.onload = function() {
+    // Jouw code die je wil uitvoeren bij het laden van de pagina
+    console.log("Pagina is volledig geladen!");
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("content").style.display = "block";
+    
+   
+};
+
