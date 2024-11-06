@@ -407,8 +407,6 @@ input[type="submit"]:hover {
   background-color: #45a049;
 }
 
-
-
 /* Media Queries voor Responsiviteit */
 @media (max-width: 1024px) {
   header{
