@@ -312,6 +312,12 @@ footer {
   grid-row-start: 2;
 }
 
+.kubernetes {
+  grid-column-start: 2;
+  grid-row-start: 3;
+
+}
+
 .git {
   grid-column-start: 3;
   grid-row-start: 2;
