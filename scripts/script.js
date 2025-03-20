@@ -1,4 +1,3 @@
-
 // Functie om leeftijd te berekenen
 function berekenLeeftijd(geboortedatum) {
     const vandaag = new Date();
@@ -42,6 +41,18 @@ document.addEventListener("DOMContentLoaded", function() {
       navbar.classList.toggle("navbar-active");
     });
 });
+
+document.querySelectorAll('.dropdown-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      button.classList.toggle('active');
+      const content = button.nextElementSibling;
+      if (content.style.display === 'block') {
+        content.style.display = 'none';
+      } else {
+        content.style.display = 'block';
+      }
+    });
+});
   
 
 var slideIndex = 1;
@@ -77,4 +88,4 @@ document.querySelectorAll('.nav-link').forEach(link => {
       }, 500); // tijd moet overeenkomen met de duur van de fade-out animatie
     });
   });
-  
+

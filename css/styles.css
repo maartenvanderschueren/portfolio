@@ -1,12 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 :root {
-  --backgroundCol : linear-gradient(to right, #0b285a 0%, #1e3c72 50%, #0b285a 100%);
-  --text-kleur: whitesmoke;
-  --navtext-color: whitesmoke;
-  --vaardigheden-kleur: #0f294f;
+  --backgroundCol: linear-gradient(
+    to right,
+    #0f2027,
+    #203a43,
+    #2c5364
+  ); /* Dark gradient */
+  --text-kleur: #e0e0e0; /* Light gray for text */
+  --navtext-color: #00ffc3; /* Neon green for navigation text */
+  --vaardigheden-kleur: #1a1a2e; /* Dark blue-gray for skills background */
+  --accent-color: #0bb17f; /* Neon green for hover and accents */
+  --border-color: #4ecca3; /* Soft neon green for borders */
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -18,8 +26,8 @@ body::-webkit-scrollbar {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-image: linear-gradient(to right, #0b285a 0%, #1e3c72 50%, #0b285a 100%);
+  font-family: "Poppins", sans-serif;
+  background-image: var(--backgroundCol);
   color: var(--text-kleur);
   display: flex;
   flex-direction: column;
@@ -33,8 +41,12 @@ body {
 }
 
 @keyframes fadeInAnimation {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Fade-out animatie voor bij het verlaten van de pagina */
@@ -44,8 +56,12 @@ body {
 }
 
 @keyframes fadeOutAnimation {
-  from { opacity: 1; }
-  to { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 header {
@@ -59,14 +75,16 @@ header {
   justify-content: space-between;
 }
 
-header #linkedin, header #mail {
+header #linkedin,
+header #mail {
   font-size: 30px;
   color: inherit;
   text-decoration: none;
 }
 
-header #linkedin:hover, header #mail:hover {
-  color: #0077B5;
+header #linkedin:hover,
+header #mail:hover {
+  color: var(--accent-color); /* Neon green hover effect */
   transition: 0.3s;
 }
 
@@ -112,7 +130,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #51829B;
+  color: var(--accent-color); /* Neon green hover effect */
 }
 
 .contact {
@@ -125,41 +143,64 @@ nav ul li a:hover {
   color: var(--text-kleur);
 }
 
-.contact a, .contact li, .contact h2 {
+.contact a,
+.contact li,
+.contact h2 {
   color: var(--text-kleur);
   text-decoration: none;
 }
 
 #about {
   display: flex;
-  align-items: center; /* Om de foto en de tekst verticaal uit te lijnen */
+  align-items: center; /* Vertically align photo and text */
+  justify-content: center; /* Center the content horizontally */
   margin: auto;
+  text-align: left; /* Align text to the left */
 }
 
 #about .foto {
-  max-width: 70%; /* Pas de grootte van de foto aan */
-  width: 400px;
-  max-height: 100%;
-  flex-shrink: 0; /* Zorg ervoor dat de foto niet verkleint */
-  border-radius: 50%;
-  margin: 50px;
-  box-shadow: 5px 5px 10px #51829B;
+  margin-right: 5rem; /* Reduce spacing between photo and text */
+  flex-shrink: 0; /* Prevent the photo from shrinking */
+  border-radius: 50%; /* Keep the circular shape */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  animation: pulse 3s infinite; /* Add a subtle pulsing effect */
+}
+
+#about .foto:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7); /* Enhanced shadow on hover */
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+  }
 }
 
 #about p {
   flex-grow: 1; /* De tekst vult de resterende ruimte */
-  margin-right: 150px;
+  margin-right: 20px;
+  font-size: 18px; /* Slightly larger text */
+  max-width: 800px; /* Limit text width */
+  line-height: 1.6; /* Improve readability */
 }
 
 #about .about-text {
   display: grid;
-  grid-column: auto;/* Zorgt ervoor dat h2 en p onder elkaar staan */
-  max-width: 1080px;
+  grid-column: auto; /* Zorgt ervoor dat h2 en p onder elkaar staan */
+  max-width: 600px; /* Limit the width of the text */
   color: var(--text-kleur);
 }
 
 .header2 {
-  background-color: #51829B;
+  background-color: #51829b;
   box-shadow: 5px 3px 3px rgb(190, 189, 189);
   color: var(--text-kleur);
   max-width: fit-content;
@@ -169,8 +210,9 @@ nav ul li a:hover {
 }
 
 .NaamHeader {
-  font-size: 30px;
-  margin: 10px;
+  font-size: 40px; /* Increase font size */
+  font-weight: bold;
+  margin: 20px 0;
 }
 
 footer {
@@ -180,6 +222,7 @@ footer {
   padding: 10px 0;
   width: 100%;
   margin-top: auto; /* Duw de footer naar de onderkant */
+  border-top: 1px solid var(--border-color); /* Neon border at the top */
 }
 
 .contact h2 ul {
@@ -187,7 +230,33 @@ footer {
 }
 
 .slideBox {
-  align-items: center;
+  margin: 20px 30% auto; /* Add spacing and center horizontally */
+  padding: 20px; /* Add padding for better spacing */
+  background-color: #1a1a2e; /* Match the dark blue-gray background */
+  border-radius: 10px; /* Rounded corners for a modern look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  border: 1px solid var(--border-color); /* Neon border */
+  text-align: center; /* Center content */
+}
+
+.slideBox h3,
+.slideBox p {
+  color: var(--text-kleur); /* Ensure text is readable */
+}
+
+.slideBox button {
+  background-color: var(--accent-color); /* Neon green buttons */
+  color: #ffffff; /* Black text for contrast */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slideBox button:hover {
+  background-color: #0acca5; /* Slightly darker neon green on hover */
+  box-shadow: 0px 0px 8px 3px #00e6b8;
 }
 
 .parent {
@@ -196,7 +265,6 @@ footer {
   grid-template-rows: repeat(2, 1fr);
   gap: 50px;
   margin: 40px;
-
 }
 
 .parent div {
@@ -222,7 +290,7 @@ footer {
   transform: scale(2);
 }
 
-.sql{
+.sql {
   grid-column-start: 2;
   grid-row-start: 1;
 }
@@ -232,16 +300,15 @@ footer {
   padding-left: 0;
 }
 
-.js{
+.js {
   grid-column-start: 3;
   grid-row-start: 1;
 }
 
-.linux{
+.linux {
   grid-column-start: 2;
   grid-row-start: 2;
   transform: scale(1.5);
-
 }
 
 .docker {
@@ -254,20 +321,31 @@ footer {
   grid-row-start: 2;
 }
 
-.Vaardigheden{
-  font-style: normal;
+.Vaardigheden {
+  margin: 20px 30% auto; /* Add spacing and center horizontally */
+  padding: 20px; /* Add padding for better spacing */
+  background-color: #1a1a2e; /* Match the dark blue-gray background */
+  border-radius: 10px; /* Rounded corners for a modern look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  border: 1px solid var(--border-color); /* Neon border */
+  text-align: center; /* Center content */
 }
 
-.Vaardigheden i{
+.Vaardigheden i {
   font-style: normal;
 }
 
 .Vaardigheden ul li {
-  margin-left: 10px;
-  font-style: normal;
+  margin: 10px 0; /* Add spacing between list items */
+  color: var(--text-kleur); /* Ensure text is readable */
 }
 
-.fa-eye{
+.Vaardigheden h2 {
+  color: var(--accent-color); /* Neon green for headings */
+  margin-bottom: 15px; /* Add spacing below headings */
+}
+
+.fa-eye {
   font-weight: bold;
   margin: 10px;
 }
@@ -287,22 +365,24 @@ li i {
 }
 
 .fadingBackground {
-  margin: auto;
+  margin: 0 auto;
   margin-top: 1rem;
   display: grid;
   color: var(--text-kleur);
   background-color: var(--vaardigheden-kleur);
-  /* background-image: linear-gradient(to right, #243949 0%, #517fa4 100%); */
   border-radius: 10px;
   padding: 5px;
-  max-width: 50%;
+  max-width: 100%;
   justify-items: center;
-  border: solid wheat;
-  box-shadow: inset 2px 2px 4px #51829B;
-
+  border: 1px solid var(--border-color); /* Neon border */
+  box-shadow: inset 2px 2px 4px var(--accent-color); /* Neon glow effect */
 }
 
-.fadingBackground img{
+.slideBox .fadingBackground{
+  justify-content: space-between;
+}
+
+.fadingBackground img {
   width: 20%;
 }
 
@@ -324,7 +404,7 @@ li i {
   grid-column: 1;
 }
 
-.w3-display-right { 
+.w3-display-right {
   grid-column: 3;
 }
 
@@ -383,15 +463,15 @@ textarea {
   color: rgb(255, 255, 255);
   padding: 5px;
   margin-bottom: 10px;
-  background-color: #cccccc49;
-  border: 1px solid #ccc;
+  background-color: #1f1f2e; /* Darker input background */
+  border: 1px solid var(--border-color); /* Neon border */
   box-shadow: 2px 2px 4px whitesmoke;
   border-radius: 4px;
 }
 
 input[type="submit"] {
-  background-color: #4CAF50;
-  color: rgb(255, 255, 255);
+  background-color: var(--accent-color); /* Neon green button */
+  color: #000; /* Black text for contrast */
   border: none;
   padding: 15px 15px;
   cursor: pointer;
@@ -399,14 +479,27 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #45a049;
+  background-color: #00e6b8; /* Slightly darker neon green on hover */
 }
 
+table {
+  margin: auto; /* Center the table horizontally */
+  padding: 0 20px; /* Add padding on both sides */
+  width: 90%; /* Ensure the table doesn't take full width */
+  border-collapse: collapse; /* Optional: for cleaner table borders */
+  border: 1px solid var(--border-color); /* Neon border for tables */
+}
 
+table th,
+table td {
+  padding: 10px; /* Add padding inside table cells */
+  text-align: center; /* Center text inside cells */
+  border: 1px solid var(--border-color); /* Neon border for cells */
+}
 
 /* Media Queries voor Responsiviteit */
 @media (max-width: 1024px) {
-  header{
+  header {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: 44px repeat(1, 1fr);
@@ -422,9 +515,9 @@ input[type="submit"]:hover {
   }
 
   nav {
-    display: none; 
-    flex-direction: column; 
-    width: 100%; 
+    display: none;
+    flex-direction: column;
+    width: 100%;
     position: absolute; /* Maak de navigatie absoluut gepositioneerd */
     top: 65px; /* Plaats het direct onder de header */
     left: 0; /* Zet het aan de linkerkant */
@@ -453,7 +546,7 @@ input[type="submit"]:hover {
     margin: 10px;
   }
 
-  #about{
+  #about {
     display: flex;
     flex-direction: column;
     margin: 15px;
@@ -463,12 +556,12 @@ input[type="submit"]:hover {
     align-items: center;
   }
 
-  #about .about-text p{
+  #about .about-text p {
     align-items: center;
     margin: auto 10px;
   }
 
-  .content img{
+  .content img {
     max-width: 100%;
   }
 
@@ -476,7 +569,7 @@ input[type="submit"]:hover {
     font-size: 15px;
     max-width: 100%;
     text-decoration: none;
-  }  
+  }
 
   .python {
     grid-column-start: 1;
@@ -484,46 +577,42 @@ input[type="submit"]:hover {
     transform: scale(5);
     width: 100%;
     height: 100%;
-
   }
-  
-  .sql{
+
+  .sql {
     grid-column-start: 2;
     grid-row-start: 1;
   }
-  
+
   .content ul {
     list-style-type: none;
     padding-left: 0;
   }
-  
-  .js{
+
+  .js {
     grid-column-start: 3;
     grid-row-start: 1;
   }
-  
-  .linux{
+
+  .linux {
     grid-column-start: 2;
     grid-row-start: 2;
     transform: scale(1.5);
-  
   }
-  
+
   .docker {
     grid-column-start: 1;
     grid-row-start: 2;
   }
-  
+
   .git {
     grid-column-start: 3;
     grid-row-start: 2;
   }
-
 }
 
-@media (max-width: 768px) { 
-
-  header{
+@media (max-width: 768px) {
+  header {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: 44px repeat(1, 1fr);
@@ -549,11 +638,26 @@ input[type="submit"]:hover {
     margin: auto;
   }
 
-  
+  header h1 {
+    font-size: 20px; /* Maak de header-tekst kleiner */
+  }
+
+  #about .foto {
+    width: 300px; /* Verklein de foto */
+  }
+
+  .fadingBackground {
+    max-width: 90%; /* Breder maken voor kleinere schermen */
+    font-size: 12px; /* Tekst iets kleiner */
+  }
+
+  form {
+    width: 80%; /* Formulier breder maken */
+  }
 }
 
 @media (max-width: 480px) {
-  header{
+  header {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: 44px repeat(1, 1fr);
@@ -582,9 +686,9 @@ input[type="submit"]:hover {
   }
 
   nav {
-    display: none; 
-    flex-direction: column; 
-    width: 100%; 
+    display: none;
+    flex-direction: column;
+    width: 100%;
     position: absolute; /* Maak de navigatie absoluut gepositioneerd */
     top: 45px; /* Plaats het direct onder de header */
     left: 0; /* Zet het aan de linkerkant */
@@ -601,7 +705,7 @@ input[type="submit"]:hover {
     max-width: 100;
   }
 
-  #about{
+  #about {
     display: flex;
     flex-direction: column;
     margin: 15px;
@@ -612,12 +716,12 @@ input[type="submit"]:hover {
     margin: 0 0;
   }
 
- .Vaardigheden {
+  .Vaardigheden {
     max-width: 100%;
     margin-right: 15px;
   }
 
-  .content img{
+  .content img {
     max-width: 100%;
   }
   .contact {
@@ -625,12 +729,61 @@ input[type="submit"]:hover {
     max-width: 100%;
     color: inherit;
     text-decoration: none;
-  }  
+  }
 
+  header h1 {
+    font-size: 18px; /* Nog kleiner voor kleine schermen */
+  }
+
+  #about .foto {
+    width: 200px; /* Foto verder verkleinen */
+  }
+
+  .fadingBackground {
+    max-width: 100%; /* Volledige breedte benutten */
+    font-size: 10px; /* Tekst nog kleiner */
+  }
+
+  form {
+    width: 100%; /* Formulier volledig breed maken */
+  }
+
+  nav ul li {
+    margin: 5px 0; /* Meer ruimte tussen menu-items */
+  }
+
+  .Vaardigheden {
+    margin: 0 auto; /* Center the section horizontally */
+    padding: 0 15px; /* Add margin on both sides */
+    text-align: center; /* Center the content */
+  }
+  .Vaardigheden ul {
+    padding: 0;
+    margin: 0 auto; /* Center the list */
+  }
+  .slideBox {
+    margin: 0 auto; /* Center the section horizontally */
+    padding: 0 15px; /* Add margin on both sides */
+    text-align: center; /* Center the content */
+  }
+}
+
+@media (max-width: 320px) {
+  header h1 {
+    font-size: 16px; /* Kleinere header-tekst */
+  }
+
+  #about .foto {
+    width: 150px; /* Foto nog kleiner */
+  }
+
+  .fadingBackground {
+    font-size: 9px; /* Tekst verder verkleinen */
+  }
 }
 
 @media (max-width: 200px) {
-  header{
+  header {
     height: 44px;
     max-width: 100%;
   }
@@ -648,11 +801,11 @@ input[type="submit"]:hover {
   }
 
   nav {
-    display: none; 
-    flex-direction: column; 
-    width: 100%; 
+    display: none;
+    flex-direction: column;
+    width: 100%;
     position: absolute;
-    top: 44px; 
+    top: 44px;
     left: 0;
   }
 
@@ -667,7 +820,7 @@ input[type="submit"]:hover {
     max-width: 100;
   }
 
-  #about{
+  #about {
     display: flex;
     flex-direction: column;
     margin: 15px;
@@ -678,8 +831,71 @@ input[type="submit"]:hover {
     margin: 0 0;
   }
 
-  .content img{
+  .content img {
     max-width: 100%;
   }
+}
 
+#about.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#about .animated-text {
+  animation: fadeInScale 1s ease-in-out;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.stage {
+  margin: 20px 0;
+}
+
+.dropdown-toggle {
+  background-color: var(--accent-color);
+  color: #000;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-toggle:hover {
+  background-color: #00e6b8;
+}
+
+.dropdown-content {
+  display: none;
+  background-color: var(--vaardigheden-kleur);
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.dropdown-content img {
+  width: 100%;
+  max-width: 300px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.stage .dropdown-toggle.active + .dropdown-content {
+  display: block;
 }
