@@ -264,7 +264,7 @@ footer {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 30px;
-  margin: 20px;
+  margin: 30px;
 }
 
 .parent div {
@@ -273,10 +273,16 @@ footer {
   align-items: center; /* Verticaal centreren */
 }
 
+.gip {
+  max-width: 50%;
+  cursor: pointer;
+}
+
 .parent div img {
   width: 100%; /* Ensure the icons scale properly */
   max-width: 80px; /* Set a maximum size for larger screens */
   height: auto; /* Maintain aspect ratio */
+  margin-bottom: 30px;
   transition: transform 0.3s ease; /* Add a smooth hover effect */
 }
 
@@ -342,6 +348,11 @@ footer {
 
 .git {
   grid-column-start: 3;
+  grid-row-start: 2;
+}
+
+.tensorflow {
+  grid-column-start: 4;
   grid-row-start: 2;
 }
 
@@ -719,6 +730,13 @@ table td {
 
   form {
     width: 80%; /* Formulier breder maken */
+  }
+  .stage .dropdown-toggle {
+    max-width: 80%;
+  }
+
+  .stage p {
+    margin: 20px auto;
   }
 }
 
