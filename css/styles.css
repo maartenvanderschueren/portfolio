@@ -155,12 +155,12 @@ nav ul li a:hover {
   align-items: center; /* Vertically align photo and text */
   justify-content: center; /* Center the content horizontally */
   margin: auto;
+  margin-bottom: 5%;
   text-align: left; /* Align text to the left */
 }
 
 #about .foto {
   margin-right: 5rem; /* Reduce spacing between photo and text */
-  flex-shrink: 0; /* Prevent the photo from shrinking */
   border-radius: 50%; /* Keep the circular shape */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
@@ -219,7 +219,7 @@ footer {
   background-color: var(--backgroundCol);
   color: var(--text-kleur);
   text-align: center;
-  padding: 10px 0;
+  padding: 0px 0;
   width: 100%;
   margin-top: auto; /* Duw de footer naar de onderkant */
   border-top: 1px solid var(--border-color); /* Neon border at the top */
@@ -613,6 +613,7 @@ table td {
     flex-direction: column;
     margin: 15px;
   }
+
 
   #about .about-text {
     align-items: center;
