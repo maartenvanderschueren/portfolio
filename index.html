@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfolio van Maarten Van der Schueren" />
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+    <title>Portfolio - Maarten Van der Schueren</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body class="fade-in">
+    <header>
+      <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <nav id="navbar">
+        <ul>
+          <li><a class="selected" href="#">Over Mij</a></li>
+          <li><a class="nav-link" href="./pages/about.html">Portfolio</a></li>
+          <li>
+            <a
+              id="linkedin"
+              href="https://www.linkedin.com/in/maartenvds"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a id="mail" href="mailto:maarten.vanderschueren@telenet.be">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+          <li>
+            <a id="mail" href="./pages/contact.html">
+              <i class="fas fa-address-card"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="about" class="intro">
+      <img
+        src="./img/maarten.jpg"
+        alt="Maarten Van der Schueren"
+        class="foto"
+      />
+      <div class="about-text">
+        <h2 class="NaamHeader animated-text">Maarten Van der Schueren</h2>
+        <p class="animated-text">
+          Ik ben <span id="leeftijd"></span> jaar en heb een passie voor
+          technologie. In mijn studie Toegepaste Informatica verdiep ik me in AI
+          en databeheer, essentiële elementen in de wereld van vandaag. Met mijn
+          achtergrond in Elektromechanica wil ik technologie en industrie
+          samenbrengen om bij te dragen aan de innovaties van morgen.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Maarten Van der Schueren. Alle rechten voorbehouden.</p>
+    </footer>
+
+    <script src="./scripts/script.index.js"></script>
+  </body>
+</html>

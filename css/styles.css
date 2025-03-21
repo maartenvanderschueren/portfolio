@@ -1,0 +1,963 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+:root {
+  --backgroundCol: linear-gradient(
+    to right,
+    #0f2027,
+    #203a43,
+    #2c5364
+  ); /* Dark gradient */
+  --text-kleur: #e0e0e0; /* Light gray for text */
+  --navtext-color: #00ffc3; /* Neon green for navigation text */
+  --vaardigheden-kleur: #1a1a2e; /* Dark blue-gray for skills background */
+  --accent-color: #0bb17f; /* Neon green for hover and accents */
+  --border-color: #4ecca3; /* Soft neon green for borders */
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-image: var(--backgroundCol);
+  color: var(--text-kleur);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: 2s ease;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnimation 0.3s forwards; /* Duur van fade-in animatie */
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fade-out animatie voor bij het verlaten van de pagina */
+.fade-out {
+  opacity: 1;
+  animation: fadeOutAnimation 0.5s forwards; /* Duur van fade-out animatie */
+}
+
+@keyframes fadeOutAnimation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+header {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 70px repeat(1, 1fr);
+  align-items: center;
+  height: 70px;
+  background-color: var(--backgroundCol);
+  color: var(--text-kleur);
+  justify-content: space-between;
+}
+
+header #linkedin,
+header #mail {
+  font-size: 30px;
+  color: inherit;
+  text-decoration: none;
+}
+
+header #linkedin:hover,
+header #mail:hover {
+  color: var(--accent-color); /* Neon green hover effect */
+  transition: 0.3s;
+}
+
+header h1 {
+  grid-row: 1;
+  grid-column: 1;
+  padding-left: 20px;
+  font-size: 25px;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.menu-toggle {
+  display: none; /* Verberg het hamburgericoon op grotere schermen */
+  cursor: pointer; /* Voeg een cursor toe voor de muisaanwijzer */
+}
+
+nav {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li .selected {
+  color: var(--navtext-color);
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-weight: bolder;
+  color: var(--text-kleur);
+}
+
+nav ul li a:hover {
+  color: var(--accent-color); /* Neon green hover effect */
+}
+
+.contact {
+  margin: auto;
+  max-height: 100%;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-kleur);
+}
+
+.contact a,
+.contact li,
+.contact h2 {
+  color: var(--text-kleur);
+  text-decoration: none;
+}
+
+#about {
+  display: flex;
+  align-items: center; /* Vertically align photo and text */
+  justify-content: center; /* Center the content horizontally */
+  margin: auto;
+  text-align: left; /* Align text to the left */
+}
+
+#about .foto {
+  margin-right: 5rem; /* Reduce spacing between photo and text */
+  flex-shrink: 0; /* Prevent the photo from shrinking */
+  border-radius: 50%; /* Keep the circular shape */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  animation: pulse 3s infinite; /* Add a subtle pulsing effect */
+}
+
+#about .foto:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7); /* Enhanced shadow on hover */
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+  }
+}
+
+#about p {
+  flex-grow: 1; /* De tekst vult de resterende ruimte */
+  margin-right: 20px;
+  font-size: 18px; /* Slightly larger text */
+  max-width: 800px; /* Limit text width */
+  line-height: 1.6; /* Improve readability */
+}
+
+#about .about-text {
+  display: grid;
+  grid-column: auto; /* Zorgt ervoor dat h2 en p onder elkaar staan */
+  max-width: 600px; /* Limit the width of the text */
+  color: var(--text-kleur);
+}
+
+.header2 {
+  background-color: #51829b;
+  box-shadow: 5px 3px 3px rgb(190, 189, 189);
+  color: var(--text-kleur);
+  max-width: fit-content;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: large;
+}
+
+.NaamHeader {
+  font-size: 40px; /* Increase font size */
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+footer {
+  background-color: var(--backgroundCol);
+  color: var(--text-kleur);
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  margin-top: auto; /* Duw de footer naar de onderkant */
+  border-top: 1px solid var(--border-color); /* Neon border at the top */
+}
+
+.contact h2 ul {
+  text-align: center;
+}
+
+.slideBox {
+  margin: 20px 20% auto; /* Add spacing and center horizontally */
+  padding: 20px; /* Add padding for better spacing */
+  background-color: #1a1a2e; /* Match the dark blue-gray background */
+  border-radius: 10px; /* Rounded corners for a modern look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  border: 1px solid var(--border-color); /* Neon border */
+  text-align: center; /* Center content */
+}
+
+.slideBox h3,
+.slideBox p {
+  color: var(--text-kleur); /* Ensure text is readable */
+}
+
+.slideBox button {
+  background-color: var(--accent-color); /* Neon green buttons */
+  color: #ffffff; /* Black text for contrast */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slideBox button:hover {
+  background-color: #0acca5; /* Slightly darker neon green on hover */
+  box-shadow: 0px 0px 8px 3px #00e6b8;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 30px;
+  margin: 20px;
+}
+
+.parent div {
+  display: flex;
+  justify-content: center; /* Horizontaal centreren */
+  align-items: center; /* Verticaal centreren */
+}
+
+.parent div img {
+  width: 100%; /* Ensure the icons scale properly */
+  max-width: 80px; /* Set a maximum size for larger screens */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease; /* Add a smooth hover effect */
+}
+
+.parent div img:hover {
+  transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+/* Adjust icon sizes for smaller screens */
+@media (max-width: 768px) {
+  .parent div img {
+    max-width: 60px; /* Reduce size for medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .parent div img {
+    max-width: 40px; /* Further reduce size for small screens */
+  }
+}
+
+.content {
+  padding: 0 25px;
+  max-height: 0;
+  overflow: hidden;
+  background-color: #f3eded;
+  border: 1px solid #9e9c9c;
+  border-radius: 5px;
+  margin-top: 5px;
+  transition: max-height 0.5s ease;
+}
+
+.python {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  transform: scale(2);
+}
+
+.sql {
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+.content ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.js {
+  grid-column-start: 3;
+  grid-row-start: 1;
+}
+
+.linux {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  transform: scale(1.5);
+}
+
+.docker {
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+
+.git {
+  grid-column-start: 3;
+  grid-row-start: 2;
+}
+
+.Vaardigheden {
+  margin: 20px 20% auto; /* Add spacing and center horizontally */
+  padding: 20px; /* Add padding for better spacing */
+  background-color: #1a1a2e; /* Match the dark blue-gray background */
+  border-radius: 10px; /* Rounded corners for a modern look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  border: 1px solid var(--border-color); /* Neon border */
+  text-align: center; /* Center content */
+}
+
+.Vaardigheden i {
+  font-style: normal;
+}
+
+.Vaardigheden ul li {
+  margin: 10px 0; /* Add spacing between list items */
+  color: var(--text-kleur); /* Ensure text is readable */
+}
+
+.Vaardigheden h2 {
+  color: var(--accent-color); /* Neon green for headings */
+  margin-bottom: 15px; /* Add spacing below headings */
+}
+
+.fa-eye {
+  font-weight: bold;
+  margin: 10px;
+}
+
+.Vaardigheden ul {
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+li i {
+  margin-right: 10px;
+}
+
+.fadingBackground {
+  margin: 0 auto;
+  margin-top: 1rem;
+  display: grid;
+  color: var(--text-kleur);
+  background-color: var(--vaardigheden-kleur);
+  border-radius: 10px;
+  padding: 5px;
+  max-width: 120%;
+  justify-items: stretch;
+  border: 1px solid var(--border-color); /* Neon border */
+  box-shadow: inset 2px 2px 4px var(--accent-color); /* Neon glow effect */
+}
+
+.slideBox .fadingBackground{
+  justify-content: space-between;
+}
+
+
+.fadingBackground .parent {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(100px, 1fr)
+  ); /* Responsive grid */
+  gap: 20px; /* Add spacing between icons */
+  justify-items: center; /* Center icons horizontally */
+  align-items: center; /* Center icons vertically */
+  padding: 20px; /* Add padding inside the container */
+}
+
+.fadingBackground .parent div img {
+  width: 80px; /* Set a consistent size for icons */
+  height: 80px; /* Ensure icons are square */
+  object-fit: contain; /* Maintain aspect ratio */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.fadingBackground .parent div img:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Adjust icon sizes for smaller screens */
+@media (max-width: 768px) {
+  .fadingBackground .parent div img {
+    width: 60px; /* Reduce size for medium screens */
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fadingBackground .parent div img {
+    width: 50px; /* Further reduce size for small screens */
+    height: 50px;
+  }
+}
+
+.fadingBackground ul {
+  display: grid;
+  padding: 0%;
+  margin: 15px;
+}
+
+.fadingBackground ul img {
+  margin: auto;
+}
+
+.w3-button {
+  background-color: transparent;
+  color: whitesmoke;
+  border: 0;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.w3-display-right {
+  grid-column: 3;
+}
+
+.fadingBackground ul {
+  margin-top: 0;
+  justify-items: center;
+ 
+}
+
+.stars {
+  display: inline-block;
+  color: #f5c518; /* Gele kleur voor de sterren */
+}
+
+.goed {
+  display: inline-block;
+  color: #0d980d; /* Gele kleur voor de sterren */
+  font-weight: bold;
+}
+
+.matig {
+  display: inline-block;
+  color: #f5c518; /* Gele kleur voor de sterren */
+  font-weight: bold;
+}
+
+.stars .fas {
+  margin-right: 5px;
+}
+
+.stars .far {
+  color: #e4e4e4; /* Kleur voor de lege sterren */
+}
+
+.navbar-active {
+  display: flex !important; /* Toestaan dat de navigatie zichtbaar is */
+}
+
+/* Contacteren */
+form {
+  max-width: 100%;
+  width: 30%;
+  margin: auto;
+  padding: 20px;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  height: 10%;
+  color: rgb(255, 255, 255);
+  padding: 5px;
+  margin-bottom: 10px;
+  background-color: #1f1f2e; /* Darker input background */
+  border: 1px solid var(--border-color); /* Neon border */
+  box-shadow: 2px 2px 4px whitesmoke;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  background-color: var(--accent-color); /* Neon green button */
+  color: #000; /* Black text for contrast */
+  border: none;
+  padding: 15px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+input[type="submit"]:hover {
+  background-color: #00e6b8; /* Slightly darker neon green on hover */
+}
+
+table {
+  margin: auto; /* Center the table horizontally */
+  padding: 0 20px; /* Add padding on both sides */
+  width: 90%; /* Ensure the table doesn't take full width */
+  border-collapse: collapse; /* Optional: for cleaner table borders */
+  border: 1px solid var(--border-color); /* Neon border for tables */
+}
+
+table th,
+table td {
+  padding: 10px; /* Add padding inside table cells */
+  text-align: center; /* Center text inside cells */
+  border: 1px solid var(--border-color); /* Neon border for cells */
+}
+
+/* Media Queries voor Responsiviteit */
+@media (max-width: 1024px) {
+  header {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 44px repeat(1, 1fr);
+    max-width: 100%;
+    justify-content: flex-end;
+  }
+
+  .menu-toggle {
+    display: grid; /* Toon het hamburgericoon op kleinere schermen */
+    margin-right: 50px;
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute; /* Maak de navigatie absoluut gepositioneerd */
+    top: 65px; /* Plaats het direct onder de header */
+    left: 0; /* Zet het aan de linkerkant */
+    background-color: var(--backgroundCol); /* Zorg voor een achtergrondkleur */
+  }
+
+  nav ul {
+    flex-direction: column; /* Zet navigatie-items onder elkaar */
+    margin: 0; /* Verwijder marge */
+    padding: 0; /* Verwijder padding */
+  }
+
+  nav ul li {
+    margin: 8px 8px; /* Voeg marge toe tussen items */
+    max-width: 100;
+  }
+
+  .fadingBackground {
+    max-width: 80%;
+    font-size: 10px;
+  }
+
+  .fadingBackground ul {
+    max-width: 90%;
+    font-size: 10px;
+    margin: 10px;
+  }
+
+  #about {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+  }
+
+  #about .about-text {
+    align-items: center;
+  }
+
+  #about .about-text p {
+    align-items: center;
+    margin: auto 10px;
+  }
+
+  .content img {
+    max-width: 100%;
+  }
+
+  .contact {
+    font-size: 15px;
+    max-width: 100%;
+    text-decoration: none;
+  }
+
+  .python {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    /* transform: scale(6); */
+    width: 100%;
+    height: 100%;
+  }
+
+  .sql {
+    grid-column-start: 2;
+    grid-row-start: 1;
+  }
+
+  .content ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .js {
+    grid-column-start: 3;
+    grid-row-start: 1;
+  }
+
+  .linux {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    transform: scale(1.5);
+  }
+
+  .docker {
+    grid-column-start: 1;
+    grid-row-start: 2;
+  }
+
+  .git {
+    grid-column-start: 3;
+    grid-row-start: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 44px repeat(1, 1fr);
+    max-width: 100%;
+    justify-content: flex-end;
+  }
+
+  .menu-toggle {
+    display: grid; /* Toon het hamburgericoon op kleinere schermen */
+    margin-right: 50px;
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .fadingBackground {
+    max-width: 80%;
+    font-size: 8px;
+  }
+
+  .fadingBackground ul {
+    max-width: 100%;
+    font-size: 10px;
+    margin: auto;
+  }
+
+  header h1 {
+    font-size: 20px; /* Maak de header-tekst kleiner */
+  }
+
+  #about .foto {
+    width: 300px; /* Verklein de foto */
+  }
+
+  .fadingBackground {
+    max-width: 90%; /* Breder maken voor kleinere schermen */
+    font-size: 12px; /* Tekst iets kleiner */
+  }
+
+  form {
+    width: 80%; /* Formulier breder maken */
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 44px repeat(1, 1fr);
+    height: 44px;
+    max-width: 100%;
+    justify-content: flex-end;
+  }
+
+  .menu-toggle {
+    display: grid; /* Toon het hamburgericoon op kleinere schermen */
+    margin-right: 50px;
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  header h1 {
+    padding-left: 20px;
+    font-size: 15px;
+    transition: 0.3s;
+    white-space: nowrap;
+  }
+
+  .menu-toggle {
+    display: block; /* Toon het hamburgericoon op kleinere schermen */
+    margin-right: 15px;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute; /* Maak de navigatie absoluut gepositioneerd */
+    top: 45px; /* Plaats het direct onder de header */
+    left: 0; /* Zet het aan de linkerkant */
+  }
+
+  nav ul {
+    flex-direction: column; /* Zet navigatie-items onder elkaar */
+    margin: 0; /* Verwijder marge */
+    padding: 0; /* Verwijder padding */
+  }
+
+  nav ul li {
+    margin: 8px 8px;
+    max-width: 100;
+  }
+
+  #about {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+  }
+
+  #about .about-text {
+    align-items: center;
+    margin: 0 0;
+  }
+
+  .Vaardigheden {
+    max-width: 100%;
+    margin-right: 15px;
+  }
+
+  .content img {
+    max-width: 100%;
+  }
+  .contact {
+    font-size: 10px;
+    max-width: 100%;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  header h1 {
+    font-size: 18px; /* Nog kleiner voor kleine schermen */
+  }
+
+  #about .foto {
+    width: 200px; /* Foto verder verkleinen */
+  }
+
+  .fadingBackground {
+    max-width: 100%; /* Volledige breedte benutten */
+    font-size: 10px; /* Tekst nog kleiner */
+  }
+
+  form {
+    width: 100%; /* Formulier volledig breed maken */
+  }
+
+  nav ul li {
+    margin: 5px 0; /* Meer ruimte tussen menu-items */
+  }
+
+  .Vaardigheden {
+    margin: 0 auto; /* Center the section horizontally */
+    padding: 0 15px; /* Add margin on both sides */
+    text-align: center; /* Center the content */
+  }
+  .Vaardigheden ul {
+    padding: 0;
+    margin: 0 auto; /* Center the list */
+  }
+  .slideBox {
+    margin: 0 auto; /* Center the section horizontally */
+    padding: 0 15px; /* Add margin on both sides */
+    text-align: center; /* Center the content */
+  }
+}
+
+@media (max-width: 320px) {
+  header h1 {
+    font-size: 16px; /* Kleinere header-tekst */
+  }
+
+  #about .foto {
+    width: 150px; /* Foto nog kleiner */
+  }
+
+  .fadingBackground {
+    font-size: 9px; /* Tekst verder verkleinen */
+  }
+}
+
+@media (max-width: 200px) {
+  header {
+    height: 44px;
+    max-width: 100%;
+  }
+
+  header h1 {
+    padding-left: 20px;
+    font-size: 15px;
+    transition: 0.3s;
+    white-space: nowrap;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-right: 15px;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 44px;
+    left: 0;
+  }
+
+  nav ul {
+    flex-direction: column; /* Zet navigatie-items onder elkaar */
+    margin: 0; /* Verwijder marge */
+    padding: 0; /* Verwijder padding */
+  }
+
+  nav ul li {
+    margin: 8px 8px; /* Voeg marge toe tussen items */
+    max-width: 100;
+  }
+
+  #about {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+  }
+
+  #about .about-text {
+    align-items: center;
+    margin: 0 0;
+  }
+
+  .content img {
+    max-width: 100%;
+  }
+}
+
+#about.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#about .animated-text {
+  animation: fadeInScale 1s ease-in-out;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.stage {
+  margin: 20px 0;
+}
+
+.dropdown-toggle {
+  background-color: var(--accent-color);
+  color: #000;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-toggle:hover {
+  background-color: #00e6b8;
+}
+
+.dropdown-content {
+  display: none;
+  background-color: var(--vaardigheden-kleur);
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.dropdown-content img {
+  width: 100%;
+  max-width: 300px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.stage .dropdown-toggle.active + .dropdown-content {
+  display: block;
+}
