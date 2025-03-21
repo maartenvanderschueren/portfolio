@@ -583,18 +583,21 @@ table td {
     position: absolute; /* Maak de navigatie absoluut gepositioneerd */
     top: 65px; /* Plaats het direct onder de header */
     left: 0; /* Zet het aan de linkerkant */
-    background-color: var(--backgroundCol); /* Zorg voor een achtergrondkleur */
+    background-image: var(--backgroundCol); /* Zorg voor een achtergrondkleur */
   }
 
   nav ul {
     flex-direction: column; /* Zet navigatie-items onder elkaar */
-    margin: 0; /* Verwijder marge */
-    padding: 0; /* Verwijder padding */
+    margin: -10px; /* Verwijder marge */
+    padding: 2%; /* Verwijder padding */
+    z-index: 100;
+    background-image: var(--backgroundCol);
   }
 
   nav ul li {
     margin: 8px 8px; /* Voeg marge toe tussen items */
     max-width: 100;
+    
   }
 
   .fadingBackground {
@@ -759,7 +762,7 @@ table td {
 
   nav ul {
     flex-direction: column; /* Zet navigatie-items onder elkaar */
-    margin: 0; /* Verwijder marge */
+    margin: -2%; /* Verwijder marge */
     padding: 0; /* Verwijder padding */
   }
 
@@ -825,9 +828,12 @@ table td {
     margin: 0 auto; /* Center the list */
   }
   .slideBox {
-    margin: 0 auto; /* Center the section horizontally */
-    padding: 0 15px; /* Add margin on both sides */
+    margin: 40px 40px 30px 40px; /* Center the section horizontally */
     text-align: center; /* Center the content */
+  }
+
+  .stage .dropdown-toggle {
+    max-width: 80%;
   }
 }
 
