@@ -161,6 +161,7 @@ nav ul li a:hover {
 
 #about .foto {
   margin-right: 5rem; /* Reduce spacing between photo and text */
+  max-width: 100%;
   border-radius: 50%; /* Keep the circular shape */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
