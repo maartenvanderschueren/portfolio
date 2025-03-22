@@ -293,19 +293,6 @@ footer {
   transform: scale(1.2); /* Slight zoom effect on hover */
 }
 
-/* Adjust icon sizes for smaller screens */
-@media (max-width: 768px) {
-  .parent div img {
-    max-width: 60px; /* Reduce size for medium screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .parent div img {
-    max-width: 40px; /* Further reduce size for small screens */
-  }
-}
-
 .content {
   padding: 0 25px;
   max-height: 0;
@@ -431,7 +418,6 @@ li i {
   gap: 20px; /* Add spacing between icons */
   justify-items: center; /* Center icons horizontally */
   align-items: center; /* Center icons vertically */
-  padding: 20px; /* Add padding inside the container */
 }
 
 .fadingBackground .parent div img {
@@ -445,20 +431,6 @@ li i {
   transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
-/* Adjust icon sizes for smaller screens */
-@media (max-width: 768px) {
-  .fadingBackground .parent div img {
-    width: 60px; /* Reduce size for medium screens */
-    height: 60px;
-  }
-}
-
-@media (max-width: 480px) {
-  .fadingBackground .parent div img {
-    width: 50px; /* Further reduce size for small screens */
-    height: 50px;
-  }
-}
 
 .fadingBackground ul {
   display: grid;
@@ -615,7 +587,7 @@ table td {
   }
 
   .fadingBackground {
-    max-width: 80%;
+    max-width: 90%;
     font-size: 10px;
   }
 
@@ -657,6 +629,16 @@ table td {
     /* transform: scale(6); */
     width: 100%;
     height: 100%;
+  }
+
+  .tensorflow {
+    grid-column-start: 1;
+    grid-row-start: 3;
+  }
+
+  .torch {
+    grid-column-start: 2;
+    grid-row-start: 3;
   }
 
   .sql {
@@ -731,6 +713,12 @@ table td {
     font-size: 12px; /* Tekst iets kleiner */
   }
 
+  .parent {
+    width:  70%;
+    padding-top: 20px;
+    margin: auto;
+  }
+
   form {
     width: 80%; /* Formulier breder maken */
   }
@@ -741,6 +729,17 @@ table td {
   .stage p {
     margin: 20px auto;
   }
+
+  .js {
+    grid-column-start: 1;
+    grid-row-start: 4;
+  }
+
+  .git {
+    grid-column-start: 2;
+    grid-row-start: 4;
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -803,11 +802,6 @@ table td {
     margin: 0 0;
   }
 
-  .Vaardigheden {
-    max-width: 100%;
-    margin-right: 15px;
-  }
-
   .content img {
     max-width: 100%;
   }
@@ -840,21 +834,37 @@ table td {
   }
 
   .Vaardigheden {
-    margin: 0 auto; /* Center the section horizontally */
-    padding: 0 15px; /* Add margin on both sides */
+    margin: 10%; /* Center the section horizontally */
+    padding: 15px; /* Add margin on both sides */
     text-align: center; /* Center the content */
+    max-width: 100%;
   }
+
   .Vaardigheden ul {
     padding: 0;
     margin: 0 auto; /* Center the list */
   }
   .slideBox {
-    margin: 40px 40px 30px 40px; /* Center the section horizontally */
+    margin: 40px 40px 0px 40px; /* Center the section horizontally */
     text-align: center; /* Center the content */
+  }
+
+  .slideBox ul {
+    padding: 10%;
+  }
+
+  .slideBox .w3-display-left, .slideBox .w3-display-right {
+    padding: 0px;
+    padding-left: 4px;
+    background-color: transparent; /* Neon green button */
   }
 
   .stage .dropdown-toggle {
     max-width: 80%;
+  }
+
+  .parent {
+    margin: 0 auto;
   }
 }
 
