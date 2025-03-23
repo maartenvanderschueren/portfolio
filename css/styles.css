@@ -348,6 +348,7 @@ footer {
 
 .Vaardigheden {
   margin: 20px 20% auto; /* Add spacing and center horizontally */
+  margin-bottom: 20px;
   padding: 20px; /* Add padding for better spacing */
   background-color: #1a1a2e; /* Match the dark blue-gray background */
   border-radius: 10px; /* Rounded corners for a modern look */
