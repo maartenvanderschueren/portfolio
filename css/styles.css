@@ -9,6 +9,7 @@
   --text-kleur: #e0e0e0; /* Light gray for text */
   --navtext-color: #00ffc3; /* Neon green for navigation text */
   --vaardigheden-kleur: #1a1a2e; /* Dark blue-gray for skills background */
+  --vaardigheden-kleur-buiten: #0f2027; /* Dark blue-gray for skills background */
   --accent-color: #0bb17f; /* Neon green for hover and accents */
   --border-color: #4ecca3; /* Soft neon green for borders */
 }
@@ -26,7 +27,7 @@ body::-webkit-scrollbar {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "montserrat", sans-serif;
   background-image: var(--backgroundCol);
   color: var(--text-kleur);
   display: flex;
@@ -165,8 +166,8 @@ nav ul li a:hover {
   width: 30%;
   border-radius: 50%; /* Keep the circular shape */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  object-fit: cover;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
-  animation: pulse 3s infinite; /* Add a subtle pulsing effect */
 }
 
 #about .foto:hover {
@@ -233,7 +234,6 @@ footer {
 }
 
 .slideBox {
-  margin: 20px 20% auto; /* Add spacing and center horizontally */
   padding: 20px; /* Add padding for better spacing */
   background-color: #1a1a2e; /* Match the dark blue-gray background */
   border-radius: 10px; /* Rounded corners for a modern look */
@@ -350,10 +350,8 @@ footer {
   margin: 20px 20% auto; /* Add spacing and center horizontally */
   margin-bottom: 20px;
   padding: 20px; /* Add padding for better spacing */
-  background-color: #1a1a2e; /* Match the dark blue-gray background */
+  background-color: none; /* Match the dark blue-gray background */
   border-radius: 10px; /* Rounded corners for a modern look */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
-  border: 1px solid var(--border-color); /* Neon border */
   text-align: center; /* Center content */
 }
 
@@ -422,8 +420,8 @@ li i {
 }
 
 .fadingBackground .parent div img {
-  width: 80px; /* Set a consistent size for icons */
-  height: 80px; /* Ensure icons are square */
+  width: 50px; /* Set a consistent size for icons */
+  height: 50px; /* Ensure icons are square */
   object-fit: contain; /* Maintain aspect ratio */
   transition: transform 0.3s ease; /* Smooth hover effect */
 }
