@@ -3,10 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio van Maarten" />
+    <meta name="description" content="Portfolio van Maarten Van der Schueren" />
     <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <title>Portfolio - Maarten Van der Schueren</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -14,236 +12,264 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/about.css" />
+    <title>Portfolio - Maarten Van der Schueren</title>
   </head>
   <body class="fade-in">
     <header>
-      <h1>Maarten Van der Schueren</h1>
-      <div class="menu-toggle" id="mobile-menu">
-        <i class="fas fa-bars"></i>
-      </div>
-
-      <nav id="navbar">
-        <ul>
-          <li><a href="../index.html">Over Mij</a></li>
-          <li><a class="selected" href="#">Portfolio</a></li>
-          <li>
-            <a
-              id="linkedin"
-              href="https://www.linkedin.com/in/maartenvds"
-              target="_blank"
-            >
-              <i class="fab fa-linkedin"></i>
-            </a>
-          </li>
-          <li>
-            <a id="mail" href="mailto:maarten.vanderschueren@telenet.be">
-              <i class="fas fa-envelope"></i>
-            </a>
-          </li>
-          <li>
-            <a id="mail" href="../documents/Curiculum Vitae 01-04-2025_NoAdress.pdf">
-              <i class="fas fa-address-card"></i>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    
-    <section class="Vaardigheden">
-      <div class="slideBox">
-        <section class="fadingBackground">
-          <button class="w3-button w3-display-left" onclick="plusDivs(-1)">
-            &#10094;
-          </button>
-          <button class="w3-button w3-display-right" onclick="plusDivs(+1)">
-            &#10095;
-          </button>
-          <ul>
-            <h3>AI & Data engineering - Toegepaste informatica 2022-2025</h3>
-            <p>
-              In de richting AI & Data engineering hebben we verschillende kleine
-              projecten moeten uitvoeren. Hierbij moesten we een voorspelling
-              maken voor zonnepanelen wanneer en hoeveel ze zouden opbrengen
-              afhankelijk van o.a. de temperatuur. Hieronder lijst ik een aantal
-              projecten op die we in de hogeschool hebben gemaakt (zowel in groep
-              als individueel)
-            </p>
-            <ul>
-              <li>- Splendor spel met Java (1ste jaar)</li>
-              <li>- REST-API (2de jaar)</li>
-              <li>- Voorspelling voetbalwedstrijden (2de jaar)</li>
-              <li>- Voorspelling zonnepanelen (2de jaar)</li>
-            </ul>
-          </ul>
-        </section>
-      </div>
-      <div data-aos="fade-in" class="slideBox">
-        <section class="fadingBackground">
-          <button class="w3-button w3-display-left" onclick="plusDivs(-1)">
-            &#10094;
-          </button>
-          <button class="w3-button w3-display-right" onclick="plusDivs(+1)">
-            &#10095;
-          </button>
-          <ul>
-            <h3>Geïntegreerde proef - Elektromechanica 2022</h3>
-            <p>
-              Binnen de richting Elektromechanica werden we uitgedaagd om in het
-              laatste jaar een GIP te maken, hierbij toon je wat je kan. Op
-              onderstaande afbeelding zien we een 3D model van mijn uitwerking
-              hiervan. Hier hebben we een vicieuze transportband gemaakt met
-              verschillende functies. Het gebruik van cilinders, vacuüm
-              zuignappen, drukknoppen en een transportband zijn hierbij getoond.
-            </p>
-            <img src="../img/Afbeelding1.png" alt="Project 1" class="gip" onclick="window.open(this.src)"/>
-          </ul>
-        </section>
-      </div>
-      <div data-aos="fade-in" class="slideBox">
-        <section class="fadingBackground">
-          <button class="w3-button w3-display-left" onclick="plusDivs(-1)">
-            &#10094;
-          </button>
-          <button class="w3-button w3-display-right" onclick="plusDivs(+1)">
-            &#10095;
-          </button>
-          <ul>
-          <h3>Stages</h3>
-          <p>
-            Hieronder vind je een overzicht van mijn stages met meer informatie.
-          </p>
-          <div class="stage">
-            <button class="dropdown-toggle">Degramec: Elektromechanica</button>
-            <div class="dropdown-content">
-              <p>
-                Bij deze stage werkte ik als elektromechanieker bij Degramec.Hier
-                hield ik me bezig met het onderhoud en het opbouwen van innovatieve landbouwmachines.
-              </p>
-              <ul>
-                <li>Monteren van motoren en sensoren.</li>
-                <li>Plaatsing van machines en installatie bij bedrijven.</li>
-                <li>Opbouwen van elektrische kasten.</li>
-              </ul>
-              <img src="../img/degramec.jpg" alt="Stage 1" class="stage-image" />
-            </div>
-          </div>
-          <div class="stage">
-            <button class="dropdown-toggle">ArcelorMittal Gent: Toegepaste informatica</button>
-            <div class="dropdown-content">
-              <p>
-                Tijdens deze stage werkte ik in het computer vision team van ArcelorMittal Gent.
-                Hierbij hield ik me bezig met trainen van segmentatienetwerken die in de productie heel nuttig zijn voor veiligheid en controle.
-              </p>
-              <ul>
-                <li>Gebruik van tools voor handmatige labeling</li>
-                <li>Gebruik van python voor trainen van modellen</li>
-              </ul>
-              <img src="../img/ArcelorMittal.svg.png" alt="Stage 2" class="stage-image" />
-            </div>
+        <h1>Maarten Van der Schueren</h1>
+        <div class="menu-toggle" id="mobile-menu">
+          <i class="fas fa-bars"></i>
+        </div>
   
-          </div>
-      </ul>
-        </section>
-      </div>
+        <nav id="navbar">
+          <ul>
+            <li><a href="../index.html">Over Mij</a></li>
+            <li><a class="selected" href="#">Portfolio</a></li>
+            <li>
+              <a
+                id="linkedin"
+                href="https://www.linkedin.com/in/maartenvds"
+                target="_blank"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+            <li>
+              <a id="mail" href="mailto:maarten.vanderschueren@telenet.be">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </li>
+            <li>
+              <a id="mail" href="../documents/Curiculum Vitae 01-04-2025_NoAdress.pdf">
+                <i class="fas fa-address-card"></i>
+              </a>
+            </li>
           </ul>
-      <div data-aos="fade-up" class="fadingBackground">
-        <h2>Talen</h2>
-        <ul>
-          <li>
-            <i class="soort">Nederlands</i>
-            <span class="goed"> Moedertaal </span>
-          </li>
-          <li>
-            <i class="soort">Engels</i>
-            <span class="goed"> Ruim voldoende </span>
-          </li>
-          <li>
-            <i class="soort">Frans</i>
-            <span class="matig"> Matig </span>
-          </li>
-        </ul>
-      </div>
-      <div data-aos="fade-up" class="fadingBackground">
-        <h2>Vaardigheden</h2>
-        <ul>
-          <li>
-            <i class="soort">Machine Learning</i>
-            <span class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </span>
-          </li>
-          <li>
-            <i class="soort">Databases</i>
-            <span class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-            </span>
-          </li>
-          <li>
-            <i class="soort">Operating Systems</i>
-            <span class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </span>
-          </li>
-          <li>
-            <i class="soort">Web development</i>
-            <span class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-            </span>
-          </li>
-        </ul>
-      </div>
+        </nav>
+      </header>
 
-      <div data-aos="fade-up" class="fadingBackground">
-        <h2 class="icons">Technical Toolkit</h2>
-        <div class="parent">
-          <div class="python"><img src="../img/python.svg" alt="Python" /></div>
-          <div class="sql"><img src="../img/database-sql.png" alt="SQL" /></div>
-          <div class="js">
-            <img src="../img/javascript-logo.svg" alt="javascript" />
+    <main>
+      <!-- Sectie: Stages -->
+      <section class="gallery">
+        <h2>Stages</h2>
+        <div class="gallery-grid">
+          <!-- Stage 1 -->
+          <div class="gallery-item">
+            <img
+              src="../img/ArcelorMittal.svg.png"
+              alt="Stage ArcelorMittal"
+              class="gallery-image"
+              onclick="openModal('modalstageAM')""
+             />
+        <h3>Stage: ArcelorMittal</h3>
           </div>
-          <div class="linux"><img src="../img/linux.png" alt="linux" /></div>
-          <div class="docker"><img src="../img/docker.png" alt="docker" /></div>
-          <div class="git"><img src="../img/git.png" alt="git" /></div>
-          <div class="torch"><img src="../img/torch.png" alt="pytorch" /></div>
-          <div class="tensorflow"><img src="../img/tensorflow.png" alt="pytorch" /></div>
+          <!-- Stage 2 -->
+          <div class="gallery-item">
+            <img
+              src="../img/degramec.jpg"
+              alt="Stage Degramec"
+              class="gallery-image"
+              onclick="openModal('modelstageDegramec')"
+            />
+            <h3>Stage: Degramec</h3>
+          </div>
+          <!-- Add more items as needed -->
+        </div>
+      </section>
 
+      <!-- Sectie: Projecten -->
+      <section class="gallery">
+        <h2>Projecten</h2>
+        <div class="gallery-grid">
+          <!-- Project 1 -->
+          <div class="gallery-item">
+            <img
+              src="../img/Afbeelding1.png"
+              alt="Project 1"
+              class="gallery-image"
+              onclick="openModal('modal1')"
+            />
+            <h3>Project 1: Eindwerk Elektromechanica</h3>
+          </div>
 
+          <!-- Project 2 -->
+          <div class="gallery-item">
+            <img
+              src="../img/solar.png"
+              alt="Project 2"
+              class="gallery-image"
+              onclick="openModal('modal2')"
+            />
+            <h3>Project 2: Voorspelling Zonnepanelen</h3>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sectie: Vaardigheden -->
+      <section class="gallery">
+        <h2>Vaardigheden</h2>
+        <div class="gallery-grid">
+          <!-- Placeholder voor vaardigheden -->
+          <div class="gallery-item">
+            <h3>Talen</h3>
+            <ul>
+                <li>
+                  <i class="soort">Nederlands</i>
+                  <span class="goed"> Moedertaal </span>
+                </li>
+                <li>
+                  <i class="soort">Engels</i>
+                  <span class="goed"> Ruim voldoende </span>
+                </li>
+                <li>
+                  <i class="soort">Frans</i>
+                  <span class="matig"> Matig </span>
+                </li>
+              </ul>
+        </div>
+        <div class="gallery-item">
+            <h3>Vaardigheden</h3>
+                <ul>
+                <li>
+                    <i class="soort">Machine Learning</i>
+                    <span class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    </span>
+                </li>
+                <li>
+                    <i class="soort">Databases</i>
+                    <span class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    </span>
+                </li>
+                <li>
+                    <i class="soort">Operating Systems</i>
+                    <span class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    </span>
+                </li>
+                <li>
+                    <i class="soort">Web development</i>
+                    <span class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    </span>
+                </li>
+                </ul>
+          </div>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <h3 class="icons">Technical Toolkit</h3>
+                <div class="parent">
+                  <div class="python"><img src="../img/python.png" alt="Python" /></div>
+                  <div class="sql"><img src="../img/database-sql.png" alt="SQL" /></div>
+                  <div class="js">
+                    <img src="../img/javascript-logo.svg" alt="javascript" />
+                  </div>
+                  <div class="linux"><img src="../img/linux.png" alt="linux" /></div>
+                  <div class="docker"><img src="../img/docker.png" alt="docker" /></div>
+                  <div class="git"><img src="../img/git.png" alt="git" /></div>
+                  <div class="torch"><img src="../img/torch.png" alt="pytorch" /></div>
+                  <div class="tensorflow"><img src="../img/tensorflow.png" alt="pytorch" /></div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <section class="gallery">
+        <h2>certificaten</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item" id="click" onclick="openUrl('https://csm-examen.be/qr/be00002+1+nl+241125')">
+            <h3>VCA (Basisveiligheid)</h3>
+            Geldig tot 10-12-2031
+            </div>
+            <div class="gallery-item">
+                <h3>Rijbewijs</h3>
+                B, AM
+            </div>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <h3>Diploma</h3>
+                Elektromechanica 3de graad
+            </div>
+        </div>
+      
+      </section>
+
+      <!-- Modals -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal1')">&times;</span>
+          <h2>Splendor Spel</h2>
+          <p>
+            Dit project was een implementatie van het bordspel Splendor in Java.
+            Het doel was om een volledig functioneel spel te maken met een
+            grafische interface.
+          </p>
+          <img src="../img/project1.jpg" alt="Splendor Spel" />
         </div>
       </div>
-      <div data-aos="fade-up" class="fadingBackground">
-        <h2>Behaalde diploma's & certificaten</h2>
-        <ul>
-          <li class="soort">Elektromechanica 3de graad</li>
-          <li class="soort">VCA Basisveiligheid</li>
-        </ul>
+
+      <div id="modal2" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal2')">&times;</span>
+          <h2>Voorspelling Zonnepanelen</h2>
+          <p>
+            In dit project hebben we een machine learning-model getraind om de
+            opbrengst van zonnepanelen te voorspellen op basis van
+            weersomstandigheden.
+          </p>
+          <img src="../img/solar.png" alt="Voorspelling Zonnepanelen" />
+        </div>
       </div>
-    </section>
+
+      <div id="modalstageAM" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modalstageAM')">&times;</span>
+          <h2>Stage: ArcelorMittal</h2>
+          <p>
+            Tijdens mijn stage bij ArcelorMittal werkte ik aan computer vision
+            projecten, waaronder het trainen van segmentatienetwerken voor
+            kwaliteitscontrole.
+          </p>
+          <img src="../img/ArcelorMittal.svg.png" alt="Stage ArcelorMittal" />
+        </div>
+      </div>
+
+      <div id="modelstageDegramec" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modelstageDegramec')">&times;</span>
+          <h2>Stage: Degramec</h2>
+          <p>
+            Voor mijn laatste jaar Elektromechanica in het 6de middelbaar heb ik 10 dagen stage gelopen bij Degramec. Dit was een stage waar ik als
+            elektromechanieker aan de slag ging. Hier heb ik veel geleerd over het onderhoud en het opbouwen van innovatieve landbouwmachines.
+          </p>
+          <img src="../img/degramec.jpg" alt="Stage ArcelorMittal" />
+        </div>
+      </div>
+    </main>
 
     <footer>
       <p>&copy; 2024 Maarten Van der Schueren. Alle rechten voorbehouden.</p>
     </footer>
-
-    <script src="../scripts/script.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
+    <script src="../scripts/script.about.js">
+        
     </script>
-  </body>
-</html>

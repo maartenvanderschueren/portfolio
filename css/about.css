@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+:root {
+  --backgroundCol: linear-gradient(
+    to right,
+    #0f2027,
+    #203a43,
+    #2c5364
+  ); /* Dark gradient */
+  --text-kleur: #e0e0e0; /* Light gray for text */
+  --navtext-color: #00ffc3; /* Neon green for navigation text */
+  --vaardigheden-kleur: #1a1a2e; /* Dark blue-gray for skills background */
+  --vaardigheden-kleur-buiten: #0f2027; /* Dark blue-gray for skills background */
+  --accent-color: #0bb17f; /* Neon green for hover and accents */
+  --border-color: #4ecca3; /* Soft neon green for borders */
+}
+
+body {
+    font-family: "montserrat", sans-serif;
+    background-image: var(--backgroundCol);
+    color: var(--text-kleur);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: 2s ease;
+  }
+
+header {
+  background-color: var(--backgroundCol);
+  color: var(--text-kleur);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+header #linkedin,
+header #mail {
+  font-size: 20px;
+  color: inherit;
+  text-decoration: none;
+}
+
+header #linkedin:hover,
+header #mail:hover {
+  color: var(--accent-color); /* Neon green hover effect */
+  transition: 0.3s;
+}
+
+header h1 {
+  grid-row: 1;
+  grid-column: 1;
+  padding-left: 20px;
+  font-size: 20px;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+header nav ul {
+    flex-direction: row;
+}
+
+.menu-toggle {
+  display: none; /* Verberg standaard de menu-toggle */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+nav {
+  display: flex; /* Zorg dat de navigatie horizontaal blijft */
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex; /* Zet de items naast elkaar */
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  text-align: center;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--text-kleur);
+  padding: 5px 10px;
+}
+
+nav ul li a:hover {
+  color: var(--accent-color);
+}
+
+/* Responsive styling voor kleinere schermen */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Toon de menu-toggle op kleinere schermen */
+  }
+
+  nav {
+    display: none; /* Verberg de navigatie standaard */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--backgroundCol);
+    border-top: 1px solid var(--border-color);
+    z-index: 1000;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    background-image: var(--backgroundCol);
+    width: 100%;
+  }
+
+  nav.active {
+    display: flex; /* Toon de navigatie wanneer actief */
+  }
+
+  nav ul {
+    flex-direction: column; /* Zet de items onder elkaar op kleine schermen */
+    gap: 10px;
+    padding: 10px 0;
+  }
+}
+
+.gallery {
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 40px; /* Extra marge tussen secties */
+  max-width: 800px; /* Beperk de breedte van de sectie */
+  margin-left: auto; /* Centreer de sectie horizontaal */
+  margin-right: auto; /* Centreer de sectie horizontaal */
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); /* Maak de items kleiner */
+  gap: 15px; /* Verminder de ruimte tussen items */
+  padding: 10px; /* Verminder de padding */
+}
+
+.gallery-item {
+  background-color: var(--vaardigheden-kleur);
+  border-radius: 10px;
+  padding: 10px; /* Verminder de padding binnen de items */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Maak de schaduw subtieler */
+  transition: transform 0.3s ease;
+}
+
+#click:hover {
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item ul i {
+  margin: 0;
+  font-size: 15px; /* Grotere tekstgrootte voor de titels */
+}
+
+.gallery-image {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  background-color: var(--vaardigheden-kleur);
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  color: var(--text-kleur);
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.close {
+  color: var(--text-kleur);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: var(--accent-color);
+}
+
+.stars {
+    display: inline-block;
+    color: #f5c518; /* Gele kleur voor de sterren */
+}
+
+.goed {
+display: inline-block;
+color: #0d980d; /* Gele kleur voor de sterren */
+font-weight: bold;
+}
+
+.matig {
+display: inline-block;
+color: #f5c518; /* Gele kleur voor de sterren */
+font-weight: bold;
+}
+
+.stars .fas {
+margin-right: 5px;
+}
+
+.stars .far {
+color: #e4e4e4; /* Kleur voor de lege sterren */
+}
+
+ul li {
+  color: #e0dcdd; /* Gele kleur voor de sterren */
+  font-size: 18px; /* Grotere tekstgrootte voor de sterren */
+  text-align: left;
+  align-items: center;
+  font-weight: bold;
+  list-style-type: none; /* Verwijder de standaard opsommingstekens */
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Zorg ervoor dat de sterren aan de linkerkant staan */
+  margin-right: 5px; /* Ruimte tussen de ster en de tekst */
+  color: #f5c518; /* Gele kleur voor de sterren */
+  font-size: 18px; /* Grotere tekstgrootte voor de sterren */
+}
+
+section.gallery {
+  padding: 40px 20px; /* Extra padding rondom de secties */
+  margin-bottom: 50px; /* Grotere marge tussen secties */
+  border-top: 2px solid var(--border-color); /* Bovenste scheidingslijn */
+  border-bottom: 2px solid var(--border-color); /* Onderste scheidingslijn */
+}
+
+section.gallery h2 {
+  margin-bottom: 20px; /* Ruimte onder de titel */
+  font-size: 24px; /* Grotere titelgrootte */
+  color: var(--accent-color); /* Accentkleur voor de titel */
+  text-transform: uppercase; /* Hoofdletters voor de titel */
+  text-align: center; /* Centreer de titel */
+}
+
+section.gallery .gallery-grid {
+  margin-top: 20px; /* Ruimte tussen de titel en de inhoud */
+}
+
+footer {
+    background-color: var(--backgroundCol);
+    color: var(--text-kleur);
+    text-align: center;
+    padding: 0px 0;
+    width: 100%;
+    max-height: 100%;
+    margin-top: auto; /* Duw de footer naar de onderkant */
+    border-top: 1px solid var(--border-color); /* Neon border at the top */
+  }
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 kolommen */
+  grid-template-rows: repeat(2, auto); /* 2 rijen */
+  gap: 20px; /* Ruimte tussen de iconen */
+  justify-items: center; /* Centreer de iconen horizontaal */
+  align-items: center; /* Centreer de iconen verticaal */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.parent div img {
+  width: 50px; /* Maak de iconen kleiner */
+  height: 50px; /* Zorg voor een consistente hoogte */
+  object-fit: contain; /* Zorg dat de iconen netjes binnen de container passen */
+  transition: transform 0.3s ease;
+}
+
+.parent div img:hover {
+  transform: scale(1.2); /* Vergroot de iconen bij hover */
+}
