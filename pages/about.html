@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Portfolio van Maarten Van der Schueren" />
     <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -51,9 +52,9 @@
 
     <main>
       <!-- Sectie: Stages -->
-      <section class="gallery">
+      <section class="gallery" data-aos="fade-up">
         <h2>Stages</h2>
-        <div class="gallery-grid">
+        <div class="gallery-grid" data-aos="fade-up">
           <!-- Stage 1 -->
           <div class="gallery-item">
             <img
@@ -79,9 +80,9 @@
       </section>
 
       <!-- Sectie: Projecten -->
-      <section class="gallery">
+      <section class="gallery" data-aos="fade-up">
         <h2>Projecten</h2>
-        <div class="gallery-grid">
+        <div class="gallery-grid" data-aos="fade-up">
           <!-- Project 1 -->
           <div class="gallery-item">
             <img
@@ -107,9 +108,9 @@
       </section>
 
       <!-- Sectie: Vaardigheden -->
-      <section class="gallery">
+      <section class="gallery" data-aos="fade-up">
         <h2>Vaardigheden</h2>
-        <div class="gallery-grid">
+        <div class="gallery-grid" data-aos="fade-up">
           <!-- Placeholder voor vaardigheden -->
           <div class="gallery-item">
             <h3>Talen</h3>
@@ -174,7 +175,7 @@
                 </ul>
           </div>
         </div>
-        <div class="gallery-grid">
+        <div class="gallery-grid" data-aos="fade-up">
             <div class="gallery-item">
                 <h3 class="icons">Technical Toolkit</h3>
                 <div class="parent">
@@ -193,9 +194,9 @@
         </div>
       </section>
 
-      <section class="gallery">
+      <section class="gallery" data-aos="fade-up">
         <h2>certificaten</h2>
-        <div class="gallery-grid">
+        <div class="gallery-grid" data-aos="fade-up">
           <div class="gallery-item" id="click" onclick="openUrl('https://csm-examen.be/qr/be00002+1+nl+241125')">
             <h3>VCA (Basisveiligheid)</h3>
             Geldig tot 10-12-2031
@@ -205,7 +206,7 @@
                 B, AM
             </div>
         </div>
-        <div class="gallery-grid">
+        <div class="gallery-grid" data-aos="fade-up">
             <div class="gallery-item">
                 <h3>Diploma</h3>
                 Elektromechanica 3de graad
@@ -270,6 +271,8 @@
     <footer>
       <p>&copy; 2024 Maarten Van der Schueren. Alle rechten voorbehouden.</p>
     </footer>
-    <script src="../scripts/script.about.js">
-        
+    <script src="../scripts/script.about.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
     </script>
