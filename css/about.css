@@ -93,41 +93,6 @@ nav ul li a:hover {
   color: var(--accent-color);
 }
 
-/* Responsive styling voor kleinere schermen */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block; /* Toon de menu-toggle op kleinere schermen */
-  }
-
-  nav {
-    display: none; /* Verberg de navigatie standaard */
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: var(--backgroundCol);
-    border-top: 1px solid var(--border-color);
-    z-index: 1000;
-  }
-
-  header nav ul {
-    flex-direction: column;
-    background-image: var(--backgroundCol);
-    width: 100%;
-  }
-
-  nav.active {
-    display: flex; /* Toon de navigatie wanneer actief */
-  }
-
-  nav ul {
-    flex-direction: column; /* Zet de items onder elkaar op kleine schermen */
-    gap: 10px;
-    padding: 10px 0;
-  }
-}
-
 .gallery {
   padding: 20px;
   text-align: center;
@@ -170,6 +135,13 @@ nav ul li a:hover {
 
 .gallery-image {
   width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#makeSmall {
+  width: 70%;
+  margin-top: 5%;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -244,6 +216,7 @@ ul li {
   font-size: 18px; /* Grotere tekstgrootte voor de sterren */
   text-align: left;
   align-items: center;
+  padding-top: 2%;
   font-weight: bold;
   list-style-type: none; /* Verwijder de standaard opsommingstekens */
 }
@@ -264,7 +237,7 @@ section.gallery {
   border-bottom: 2px solid var(--border-color); /* Onderste scheidingslijn */
 }
 
-section.gallery h2 {
+section.gallery h2, section.carousel h2 {
   margin-bottom: 20px; /* Ruimte onder de titel */
   font-size: 24px; /* Grotere titelgrootte */
   color: var(--accent-color); /* Accentkleur voor de titel */
@@ -274,6 +247,68 @@ section.gallery h2 {
 
 section.gallery .gallery-grid {
   margin-top: 20px; /* Ruimte tussen de titel en de inhoud */
+}
+
+.carousel {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  flex-shrink: 0; /* Zorgt ervoor dat items niet kleiner worden */
+  text-align: center;
+}
+
+
+.carousel-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.carousel h3 {
+  margin-top: 10px;
+  color: var(--text-kleur);
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.carousel-button:hover {
+  background-color: var(--accent-color);
 }
 
 footer {
@@ -307,4 +342,39 @@ footer {
 
 .parent div img:hover {
   transform: scale(1.2); /* Vergroot de iconen bij hover */
+}
+
+/* Responsive styling voor kleinere schermen */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Toon de menu-toggle op kleinere schermen */
+  }
+
+  nav {
+    display: none; /* Verberg de navigatie standaard */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--backgroundCol);
+    border-top: 1px solid var(--border-color);
+    z-index: 1000;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    background-image: var(--backgroundCol);
+    width: 100%;
+  }
+
+  nav.active {
+    display: flex; /* Toon de navigatie wanneer actief */
+  }
+
+  nav ul {
+    flex-direction: column; /* Zet de items onder elkaar op kleine schermen */
+    gap: 10px;
+    padding: 10px 0;
+  }
 }

@@ -6,6 +6,8 @@
     <meta name="description" content="Portfolio van Maarten Van der Schueren" />
     <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -51,6 +53,38 @@
       </header>
 
     <main>
+      <!-- Sectie opleidingen -->
+      <section class="gallery" data-aos="fade-up">
+        <h2>Opleidingen</h2>
+        <div class="gallery-grid" data-aos="fade-up">
+          <!-- Stage 1 -->
+          <div class="gallery-item">
+            <img
+              src="../img/glorieux.png"
+              alt="Technisch secundair onderwijs"
+              class="gallery-image"
+              id="makeSmall"
+              onclick="openModal('modalGlorieux')"
+             />
+        <h3>Elektromechanica</h3>
+        <h4>Technisch Secundair Onderwijs</h4>
+          </div>
+          <!-- Stage 2 -->
+          <div class="gallery-item">
+            <img
+              src="../img/HOGENT_Logo_Pos_rgb.jpg"
+              alt="Stage Degramec"
+              class="gallery-image"
+              id="makeSmall"
+              onclick="openModal('modalHOGENT')"
+            />
+            <h3>Toegepaste informatica</h3>
+            <h4>AI & Data Engineering</h4>
+          </div>
+          <!-- Add more items as needed -->
+        </div>
+      </section>
+
       <!-- Sectie: Stages -->
       <section class="gallery" data-aos="fade-up">
         <h2>Stages</h2>
@@ -143,7 +177,7 @@
                     </span>
                 </li>
                 <li>
-                    <i class="soort">Databases</i>
+                    <i class="soort">Database systemen</i>
                     <span class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -193,7 +227,7 @@
             </div>
         </div>
       </section>
-
+      <!-- Certificaten -->
       <section class="gallery" data-aos="fade-up">
         <h2>certificaten</h2>
         <div class="gallery-grid" data-aos="fade-up">
@@ -212,7 +246,44 @@
                 Elektromechanica 3de graad
             </div>
         </div>
-      
+      </section>
+
+      <!-- Ervaringen -->
+      <section class="carousel" data-aos="fade-up">
+        <h2>Ervaringen</h2>
+        <div class="carousel-container">
+          <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
+          <div class="carousel-track">
+            <div class="carousel-item">
+              <img
+                src="../img/Zero_Latency_Logo.jpg"
+                alt="Zero Latency Gent"
+                class="carousel-image"
+                onclick="openUrl('https://www.zerolatencyvr.com/gent/')"
+              />
+              <h3>Zero Latency Gent</h3>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="../img/mulo.png"
+                alt="Kampen muziekschool Lochristi & De Pinte"
+                class="carousel-image"
+                onclick="openUrl('https://www.muziekschoollochristi.be/index')"
+              />
+              <h3>Kampen muziekschool Lochristi & De Pinte</h3>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="../img/akabeast.png"
+                alt="Scouts Akabeast"
+                class="carousel-image"
+                onclick="openUrl('https://www.akabeast.be/')"
+              />
+              <h3>Scouts Akabeast</h3>
+            </div>
+          </div>
+          <button class="carousel-button next" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
       </section>
 
       <!-- Modals -->
@@ -255,6 +326,35 @@
         </div>
       </div>
 
+      <div id="modalHOGENT" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modalHOGENT')">&times;</span>
+          <h2>Toegepaste Informatica</h2>
+          <p>
+            In het hoger onderwijs volg ik de opleiding Toegepaste Informatica aan de
+            Hogeschool Gent. In deze opleiding heb ik de keuzerichting AI & Data
+            Engineering gekozen. Dit is een richting die zich richt op het werken met
+            (big) data en het ontwikkelen van AI-toepassingen.
+          </p>
+          <img src="../img/HOGENT_Logo_Pos_rgb.jpg" alt="hogent" />
+        </div>
+      </div>
+
+      <div id="modalGlorieux" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modalGlorieux')">&times;</span>
+          <h2>Elektromechanica</h2>
+          <p>
+            Op Edugo Campus glorieux heb ik de richting Elektromechanica gevolgd. Dit is een
+            richting waarbij ik veel heb geleerd over de werking van machines en
+            installaties. Dit omvat zowel de mechanische als de elektrische kant van
+            machines. Hier hebben we ook PLC programmering geleerd, wat voor mij een doorslag was
+            om verder te gaan in de richting Toegepaste Informatica.
+          </p>
+          <img src="../img/glorieux.png" alt="glorieux" />
+        </div>
+      </div>
+
       <div id="modelstageDegramec" class="modal">
         <div class="modal-content">
           <span class="close" onclick="closeModal('modelstageDegramec')">&times;</span>
@@ -273,6 +373,8 @@
     </footer>
     <script src="../scripts/script.about.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    
     <script>
       AOS.init();
     </script>
+  </body>
