@@ -1,6 +1,22 @@
 // script.about.js
-let currentIndex = 0;
+let currentIndex = 1;
 
+const projects = [
+    {
+      src: "../img/Afbeelding1.png",
+      title: "Projec1: Eindwerk Elektromechanica"
+    },
+    {
+      src: "../img/solar.png",
+      title: "Project 2: Voorspelling Zonnepanelen"
+    },
+    {
+        src: "../img/arduino.png",
+        title: "Project 3: Arduino project"
+      },
+    // Voeg hier meer projecten toe indien nodig
+  ];
+  
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
@@ -170,4 +186,53 @@ function moveCarousel(direction) {
     // Move the carousel
     const offset = -currentIndex * 100;
     track.style.transform = `translateX(${offset}%)`;
+}
+
+
+
+function renderCarousel() {
+    const carousel = document.querySelector('.carousel-card');
+    const items = document.querySelectorAll('.carousel-item-card');
+    const totalItems = items.length;
+  
+    // Bereken de indexen voor previous, active en next
+    const prevIndex = (currentIndex - 1 + totalItems) % totalItems;
+    const nextIndex = (currentIndex + 1) % totalItems;
+  
+    // Reset alle items
+    items.forEach((item, index) => {
+      item.classList.remove('previous', 'active', 'next', 'hidden');
+      item.cloneNode(true); // Clone the node to reset it
+      if (index === prevIndex) {
+        item.classList.add('previous');
+      } else if (index === currentIndex) {
+        item.classList.add('active');
+      } else if (index === nextIndex) {
+        item.classList.add('next');
+      } else {
+        item.classList.add('hidden'); // Verberg items die niet in de carousel zichtbaar zijn
+      }
+    });
+  }
+
+function nextProject() {
+    const items = document.querySelectorAll('.carousel-item-card');
+    console.log(currentIndex);
+    if (currentIndex == 0) {
+        currentIndex = items.length -1;
+    } else {
+        currentIndex = (currentIndex - 1) % items.length;
+    }
+    renderCarousel();
+}
+
+function prevProject() {
+    const items = document.querySelectorAll('.carousel-item-card');
+    console.log(currentIndex);
+    if (currentIndex == items.length) {
+        currentIndex = 0;
+    } else {
+        currentIndex = (currentIndex + 1) % items.length;
+    }
+    renderCarousel();
 }

@@ -12,6 +12,11 @@
   --vaardigheden-kleur-buiten: #0f2027; /* Dark blue-gray for skills background */
   --accent-color: #0bb17f; /* Neon green for hover and accents */
   --border-color: #4ecca3; /* Soft neon green for borders */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
 }
 
 body {
@@ -237,7 +242,7 @@ section.gallery {
   border-bottom: 2px solid var(--border-color); /* Onderste scheidingslijn */
 }
 
-section.gallery h2, section.carousel h2 {
+section.gallery h2, section.carousel h2, section.carousel-container-card h2 {
   margin-bottom: 20px; /* Ruimte onder de titel */
   font-size: 24px; /* Grotere titelgrootte */
   color: var(--accent-color); /* Accentkleur voor de titel */
@@ -262,6 +267,88 @@ section.gallery .gallery-grid {
   position: relative;
 }
 
+.carousel-container-card {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  flex-direction: row;
+}
+
+.carousel-card {
+  display: flex;
+  justify-content: center; /* Zorgt ervoor dat de kaarten gecentreerd worden */
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-item-card {
+  transition: transform 1.0s, opacity 0.5s;
+  width: 300px;
+  opacity: 0.3;
+  transform: scale(0.85);
+  background-color: var(--vaardigheden-kleur);
+  border-radius: 10px;
+  padding: 10px; /* Verminder de padding binnen de items */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Maak de schaduw subtieler */
+  transition: transform 0.5 ease;
+  margin-bottom: 5%;
+}
+
+.carousel-item-card.active {
+  transform: scale(1);
+  order: 2; /* Zorgt ervoor dat de actieve kaart bovenaan staat */
+  opacity: 3;
+
+}
+
+.carousel-item-card.previous,
+.carousel-item-card.next {
+  opacity: 0.5;
+  pointer-events: none;
+
+}
+
+.carousel-item-card.next {
+  order: 1; /* Zorgt ervoor dat de volgende kaart onder de actieve kaart staat */
+}
+
+.carousel-item-card.previous {
+  order: 4;
+}
+
+.carousel-item-card.hidden {
+  display: none;
+}
+
+.carousel-item-card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1;
+  padding: 0 10px;
+}
+
+.carousel-btn.left {
+  left: 0;
+}
+
+.carousel-btn.right {
+  right: 0;
+}
+
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
@@ -269,6 +356,7 @@ section.gallery .gallery-grid {
 
 .carousel-item {
   min-width: 100%;
+  max-width: 100%;
   flex-shrink: 0; /* Zorgt ervoor dat items niet kleiner worden */
   text-align: center;
 }
@@ -288,7 +376,6 @@ section.gallery .gallery-grid {
 
 .carousel-button {
   position: absolute;
-  top: 50%;
   transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
@@ -297,7 +384,6 @@ section.gallery .gallery-grid {
   cursor: pointer;
   z-index: 10;
   border-radius: 50%;
-  width: 4.5%;
 }
 
 .carousel-button.prev {
@@ -361,6 +447,40 @@ footer {
     background-color: var(--backgroundCol);
     border-top: 1px solid var(--border-color);
     z-index: 1000;
+  }
+
+  .carousel-item-card.active {
+    transform: scale(0.85);
+    order: 0;
+  }
+
+  .carousel-item-card.previous,
+  .carousel-item-card.next {
+    opacity: 1;
+    order: 0;
+  }
+
+  .carousel-container-card {
+    display: flex;
+    flex-direction: column; /* Zorg ervoor dat de kaarten onder elkaar staan */
+    align-items: center; /* Centreer de kaarten */
+  }
+
+  .carousel-card {
+    display: flex;
+    justify-content: center; /* Zorgt ervoor dat de kaarten gecentreerd worden */
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    flex-direction: column;
+  }
+
+  .modal-content {
+    max-width: 90%;
+  }
+
+  .carousel-btn {
+    display: none;
   }
 
   header nav ul {

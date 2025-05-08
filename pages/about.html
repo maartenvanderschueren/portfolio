@@ -114,32 +114,26 @@
       </section>
 
       <!-- Sectie: Projecten -->
-      <section class="gallery" data-aos="fade-up">
+      <section class="carousel-container-card" data-aos="fade-up" >
         <h2>Projecten</h2>
-        <div class="gallery-grid" data-aos="fade-up">
-          <!-- Project 1 -->
-          <div class="gallery-item">
-            <img
-              src="../img/Afbeelding1.png"
-              alt="Project 1"
-              class="gallery-image"
-              onclick="openModal('modal1')"
-            />
-            <h3>Project 1: Eindwerk Elektromechanica</h3>
+        <div class="carousel-card" >
+          <div class="carousel-item-card previous">
+            <img src="../img/solar.png" alt="Next project" class="gallery-image" onclick="openModal('modalSolar')" />
+            <h3>Voorspelling Zonnepanelen</h3>
           </div>
-
-          <!-- Project 2 -->
-          <div class="gallery-item">
-            <img
-              src="../img/solar.png"
-              alt="Project 2"
-              class="gallery-image"
-              onclick="openModal('modal2')"
-            />
-            <h3>Project 2: Voorspelling Zonnepanelen</h3>
+          <div class="carousel-item-card active">
+            <img src="../img/Afbeelding1.png" alt="Current project" class="gallery-image" onclick="openModal('modal1')" />
+            <h3>Eindwerk Elektromechanica</h3>
+          </div>
+          <div class="carousel-item-card next">
+            <img src="../img/arduino.PNG" alt="Next project" class="gallery-image" onclick="openModal('modalArduino')" />
+            <h3>Kamp-animatie met Arduino</h3>
           </div>
         </div>
+        <button class="carousel-btn left" onclick="prevProject()">‹</button>
+        <button class="carousel-btn right" onclick="nextProject()">›</button>
       </section>
+      
 
       <!-- Sectie: Vaardigheden -->
       <section class="gallery" data-aos="fade-up">
@@ -290,19 +284,23 @@
       <div id="modal1" class="modal">
         <div class="modal-content">
           <span class="close" onclick="closeModal('modal1')">&times;</span>
-          <h2>Splendor Spel</h2>
+          <h2>Eindwerk Elektromechanica</h2>
           <p>
-            Dit project was een implementatie van het bordspel Splendor in Java.
-            Het doel was om een volledig functioneel spel te maken met een
-            grafische interface.
+            In de richting Elektromechanica heb ik een Eindwerk gemaakt waarbij we alle aspecten van onze richting moesten toepassen. 
+            Hierbij hebben we een vicieuze cirkel gemaakt waarbij een blokje van het begin naar het einde moest gaan, waarbij het einde het begin was.
+            Hier hebben we gebruikt gemaakt van pneumatische en elektrische componenten.
+            Ook hebben we een PLC geprogrammeerd die de werking van de cirkel aanstuurde.
           </p>
-          <img src="../img/project1.jpg" alt="Splendor Spel" />
+          <!-- <img src="../img/Afbeelding1.png" alt="Splendor Spel" /> -->
+          <video autoplay muted loop width="100%" height="100%">
+            <source src="../img/eindwerk.mp4" type="video/mp4" alt="Arduino project" />
+          </video>
         </div>
       </div>
 
-      <div id="modal2" class="modal">
+      <div id="modalSolar" class="modal">
         <div class="modal-content">
-          <span class="close" onclick="closeModal('modal2')">&times;</span>
+          <span class="close" onclick="closeModal('modalSolar')">&times;</span>
           <h2>Voorspelling Zonnepanelen</h2>
           <p>
             In dit project hebben we een machine learning-model getraind om de
@@ -310,6 +308,22 @@
             weersomstandigheden.
           </p>
           <img src="../img/solar.png" alt="Voorspelling Zonnepanelen" />
+        </div>
+      </div>
+
+      <div id="modalArduino" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modalArduino')">&times;</span>
+          <h2>Arduino project</h2>
+          <p>
+           In dit klein project heb ik een Arduino gebruikt om een LED-lampje te laten knipperen. 
+           Dit was voor de inkleding van een kamp, waarbij een raket stuk ging en alle lampjes moesten knipperen.
+           Door 4 schakelaar te gebruiken kon ik de lampjes aan zetten en na een tijd begonnen deze te knipperen.
+           Ook hebben we een rookmachine gebruikt voor een extra effect.
+          </p>
+          <video autoplay muted loop width="100%" height="100%">
+            <source src="../img/arduino.mp4" type="video/mp4" alt="Arduino project" />
+          </video>
         </div>
       </div>
 
@@ -336,7 +350,7 @@
             Engineering gekozen. Dit is een richting die zich richt op het werken met
             (big) data en het ontwikkelen van AI-toepassingen.
           </p>
-          <img src="../img/HOGENT_Logo_Pos_rgb.jpg" alt="hogent" />
+          <img id="makeSmall" src="../img/HOGENT_Logo_Pos_rgb.jpg" alt="hogent" />
         </div>
       </div>
 
@@ -351,7 +365,7 @@
             machines. Hier hebben we ook PLC programmering geleerd, wat voor mij een doorslag was
             om verder te gaan in de richting Toegepaste Informatica.
           </p>
-          <img src="../img/glorieux.png" alt="glorieux" />
+          <img id="makeSmall" src="../img/glorieux.png" alt="glorieux" />
         </div>
       </div>
 
