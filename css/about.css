@@ -251,7 +251,7 @@ section.gallery h2, section.carousel h2, section.carousel-container-card h2 {
 }
 
 section.gallery .gallery-grid {
-  margin-top: 20px; /* Ruimte tussen de titel en de inhoud */
+  margin-top: 20px; 
 }
 
 .carousel {
@@ -458,6 +458,8 @@ footer {
   .carousel-item-card.next {
     opacity: 1;
     order: 0;
+    pointer-events: all;
+
   }
 
   .carousel-container-card {
@@ -465,6 +467,11 @@ footer {
     flex-direction: column; /* Zorg ervoor dat de kaarten onder elkaar staan */
     align-items: center; /* Centreer de kaarten */
   }
+  
+  section.gallery .gallery-grid {
+    margin-top: 0px; 
+  }
+  
 
   .carousel-card {
     display: flex;
