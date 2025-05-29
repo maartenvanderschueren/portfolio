@@ -87,8 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
       header.textContent = displayedText;
   
       // Zorg ervoor dat de breedte van de cursor de tekst volgt
-      console.log(header.textContent.length);
-      header.style.width = `${header.textContent.length}rem`;
+      header.style.width = `${displayedText.length}ch`;
   
       if (!isDeleting && charIndex === currentText.length) {
         // Pauze na volledig typen

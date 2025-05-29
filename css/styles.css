@@ -249,7 +249,7 @@ nav ul li a:hover {
 }
 
 #about p {
-  flex-grow: 1; /* De tekst vult de resterende ruimte */
+  flex-grow: 0; /* De tekst vult de resterende ruimte */
   margin-right: 20px;
   font-size: 18px; /* Slightly larger text */
   max-width: 800px; /* Limit text width */
@@ -268,13 +268,9 @@ nav ul li a:hover {
   color: var(--text-kleur);
   white-space: nowrap;
   overflow: hidden;
+  display: inline-block; /* Zorg ervoor dat de breedte dynamisch is */
   border-right: 2px solid var(--accent-color); /* Cursor */
-  animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 80% }
+  animation: blink 0.5s step-end infinite;
 }
 
 @keyframes blink {
@@ -387,6 +383,10 @@ footer {
     margin-right: 0;
     margin-bottom: 4rem;
   }
+
+  #NaamHeader {
+    font-size: 20px; /* Maak de naam header kleiner */
+  }
 }
 
 @media (max-width: 480px) {
@@ -397,6 +397,10 @@ footer {
     height: 44px;
     max-width: 100%;
     justify-content: flex-end;
+  }
+
+  #NaamHeader {
+    font-size: 18px; /* Maak de naam header nog kleiner */
   }
 
   .menu-toggle {
