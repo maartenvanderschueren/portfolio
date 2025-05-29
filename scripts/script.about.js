@@ -45,6 +45,12 @@ function openUrl(url) {
     window.open(url, "_blank");
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const marqueeContent = document.querySelector(".gallery-track");
+  const clone = marqueeContent.cloneNode(true);
+  marqueeContent.parentElement.appendChild(clone);
+});
+
 // Event listeners for modal open and close buttons
 document.addEventListener('DOMContentLoaded', () => {
     const openButtons = document.querySelectorAll('[data-open-modal]');
