@@ -14,6 +14,18 @@
   --border-color: #4ecca3; /* Soft neon green for borders */
 }
 
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.3;
+  max-height: 80%;
+}
+
+
 html,
 body {
   height: 100%;
@@ -82,23 +94,46 @@ header {
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: 70px repeat(1, 1fr);
   align-items: center;
-  height: 70px;
   background-color: var(--backgroundCol);
   color: var(--text-kleur);
   justify-content: space-between;
 }
 
 header #linkedin,
-header #mail {
-  font-size: 20px;
+header .mail {
+  font-size: 25px;
   color: inherit;
   text-decoration: none;
 }
 
 header #linkedin:hover,
-header #mail:hover {
+header .mail:hover {
   color: var(--accent-color); /* Neon green hover effect */
-  transition: 0.3s;
+  transition: 0.5s;
+}
+
+#tooltip:hover::after {
+  content: attr(data-tooltip); /* Haalt de tekst uit het data-tooltip-attribuut */
+  position: absolute;
+  bottom: -30px; /* Plaats de tooltip onder het logo */
+  transform: translateX(-50%);
+  background-color: var(--accent-color); /* Donkere achtergrond */
+  color: #fff; /* Witte tekst */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  z-index: 10;
+  opacity: 1;
+}
+
+#tooltip::after {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#tooltip:hover::after {
+  opacity: 1;
 }
 
 header h1 {
@@ -139,6 +174,7 @@ nav ul li .selected {
 nav ul li a {
   text-decoration: none;
   font-weight: bolder;
+  font-size: 18px;
   color: var(--text-kleur);
 }
 
@@ -225,6 +261,26 @@ nav ul li a:hover {
   grid-column: auto; /* Zorgt ervoor dat h2 en p onder elkaar staan */
   max-width: 600px; /* Limit the width of the text */
   color: var(--text-kleur);
+}
+
+#NaamHeader {
+  font-size: 24px;
+  color: var(--text-kleur);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid var(--accent-color); /* Cursor */
+  animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 80% }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }
 
 footer {

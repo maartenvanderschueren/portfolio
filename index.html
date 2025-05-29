@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Portfolio van Maarten Van der Schueren" />
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+    
     <title>Portfolio - Maarten Van der Schueren</title>
     <link
       rel="stylesheet"
@@ -15,6 +16,7 @@
     />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
+  <div id="particles-js"></div>
   <body class="fade-in">
     <div id="dot-loader">
       <div></div><div></div><div></div>
@@ -30,7 +32,7 @@
           <li><a class="nav-link" href="./pages/about.html">Portfolio</a></li>
           <li><a href="./pages/contact.html">Contact</a></li>
 
-          <li>
+          <!-- <li>
             <a
               id="linkedin"
               href="https://www.linkedin.com/in/maartenvds"
@@ -43,7 +45,7 @@
             <a id="mail" href="mailto:maarten.vanderschueren@telenet.be">
               <i class="fas fa-envelope"></i>
             </a>
-          </li>
+          </li> -->
           <li>
             <a id="mail" href="./documents/Curiculum Vitae 01-04-2025_NoAdress.pdf">
               <i class="fas fa-address-card"></i>
@@ -74,8 +76,8 @@
         class="foto"
       />
       <div class="about-text">
-        <h2 class="NaamHeader animated-text">Maarten Van der Schueren</h2>
-        <p class="animated-text" data-i18n="description">
+        <h2 id="NaamHeader" class="animated-text">Maarten Van der Schueren</h2>
+        <p data-i18n="description">
           Ik ben <span id="leeftijd"></span> jaar en heb een passie voor
           technologie. In mijn studie Toegepaste Informatica verdiep ik me in AI
           en databeheer, essentiële elementen in de wereld van vandaag. Met mijn
@@ -90,5 +92,14 @@
     </footer>
 
     <script src="./scripts/script.index.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <div id="particles-js"></div>
+    
+    <script>
+    particlesJS.load('particles-js', './scripts/particles.json', function() {
+      console.log('particles.js config geladen');
+    });
+    </script>
+
   </body>
 </html>

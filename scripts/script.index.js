@@ -51,8 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-document.getElementById('leeftijd').textContent = berekenLeeftijd(geboortedatum);
-
 document.addEventListener("DOMContentLoaded", function() {
     var mobileMenu = document.getElementById("mobile-menu");
     var navbar = document.getElementById("navbar");
@@ -71,4 +69,39 @@ document.addEventListener("DOMContentLoaded", function() {
         loadingScreen.style.display = "none";
       }, 200); // Wacht tot de fade-out is voltooid
     }, 500); // Laadscherm blijft 2 seconden zichtbaar
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const header = document.getElementById("NaamHeader");
+    const texts = ["Maarten Van der Schueren", "Student AI & Data Engineer", "3de graad Elektromechanica"];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+  
+    function type() {
+      const currentText = texts[textIndex];
+      const displayedText = isDeleting
+        ? currentText.substring(0, charIndex--)
+        : currentText.substring(0, charIndex++);
+  
+      header.textContent = displayedText;
+  
+      // Zorg ervoor dat de breedte van de cursor de tekst volgt
+      console.log(header.textContent.length);
+      header.style.width = `${header.textContent.length}rem`;
+  
+      if (!isDeleting && charIndex === currentText.length) {
+        // Pauze na volledig typen
+        setTimeout(() => (isDeleting = true), 1000);
+      } else if (isDeleting && charIndex === 0) {
+        // Ga naar de volgende tekst
+        isDeleting = false;
+        textIndex = (textIndex + 1) % texts.length; // Herhaal de teksten
+      }
+  
+      const typingSpeed = isDeleting ? 50 : 100; // Sneller verwijderen
+      setTimeout(type, typingSpeed);
+    }
+  
+    type();
   });

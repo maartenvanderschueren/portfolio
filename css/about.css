@@ -2,13 +2,15 @@
 :root {
   --backgroundCol: linear-gradient(
     to right,
-    #0f2027,
-    #203a43,
-    #2c5364
-  ); /* Dark gradient */
+    rgb(15, 32, 39, 1),
+    rgb(32, 58, 67, 1),
+    rgb(44, 83, 100, 1)
+  );
+ /* Dark gradient */
+ /* Dark gradient */
   --text-kleur: #e0e0e0; /* Light gray for text */
   --navtext-color: #00ffc3; /* Neon green for navigation text */
-  --vaardigheden-kleur: #1a1a2e; /* Dark blue-gray for skills background */
+  --vaardigheden-kleur: rgba(15, 32, 39, 0.9); /* Dark blue-gray for skills background */
   --vaardigheden-kleur-buiten: #0f2027; /* Dark blue-gray for skills background */
   --accent-color: #0bb17f; /* Neon green for hover and accents */
   --border-color: #4ecca3; /* Soft neon green for borders */
@@ -26,6 +28,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    height: 100%;
+    margin: 0;
     transition: 2s ease;
   }
 
@@ -74,29 +78,55 @@ header {
   background-color: var(--backgroundCol);
   color: var(--text-kleur);
   display: flex;
+  margin-right: 30px;
+  margin-top: 10px;
   justify-content: space-between;
   align-items: center;
   position: relative;
 }
 
 header #linkedin,
-header #mail {
-  font-size: 20px;
+header .mail {
+  font-size: 25px;
   color: inherit;
   text-decoration: none;
 }
 
 header #linkedin:hover,
-header #mail:hover {
+header .mail:hover {
   color: var(--accent-color); /* Neon green hover effect */
-  transition: 0.3s;
+  transition: 0.5s;
+}
+
+#tooltip:hover::after {
+  content: attr(data-tooltip); /* Haalt de tekst uit het data-tooltip-attribuut */
+  position: absolute;
+  bottom: -30px; /* Plaats de tooltip onder het logo */
+  transform: translateX(-50%);
+  background-color: var(--accent-color); /* Donkere achtergrond */
+  color: #fff; /* Witte tekst */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  z-index: 10;
+  opacity: 1;
+}
+
+#tooltip::after {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#tooltip:hover::after {
+  opacity: 1;
 }
 
 header h1 {
   grid-row: 1;
   grid-column: 1;
   padding-left: 20px;
-  font-size: 20px;
+  font-size: 18px;
   transition: 0.3s;
   white-space: nowrap;
 }
@@ -149,26 +179,26 @@ nav ul li a:hover {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(200px, 1fr)
-  ); /* Maak de items kleiner */
-  gap: 15px; /* Verminder de ruimte tussen items */
-  padding: 10px; /* Verminder de padding */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsieve kolommen */
+  gap: 15px; /* Ruimte tussen de items */
+  padding: 20px;
+  text-align: center;
 }
+
 
 .gallery-item {
   background-color: var(--vaardigheden-kleur);
-  border-radius: 10px;
-  padding: 10px; /* Verminder de padding binnen de items */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Maak de schaduw subtieler */
-  transition: transform 0.3s ease;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtiele schaduw */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .marquee-container {
   overflow: hidden;
   background-color: var(--vaardigheden-kleur);
-  border-radius: 10px;
+  border-radius: 20px;
   position: relative;
   max-width: 780px;
   margin: 0 auto;
@@ -210,7 +240,8 @@ nav ul li a:hover {
 }
 
 .gallery-item:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Zoom-in effect bij hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .logo-label {
@@ -242,6 +273,23 @@ nav ul li a:hover {
   width: 100%;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  object-fit: fill; /* Zorg dat de afbeelding netjes binnen de container past */
+  border-radius: 10px;
+}
+
+.gallery-item h3, .gallery-item h4 {
+  font-size: 1rem; /* Maak de tekst kleiner */
+  margin: 10px 0 5px;
+  color: var(--text-kleur);
+}
+
+.gallery-item h4 {
+  font-size: 0.9rem; /* Subtitel iets kleiner */
+  color: rgba(255, 255, 255, 0.7); /* Subtiele kleur voor subtitels */
 }
 
 #makeSmall {
@@ -361,15 +409,20 @@ section.gallery {
   padding: 40px 20px; /* Extra padding rondom de secties */
   margin-bottom: 50px; /* Grotere marge tussen secties */
   border-top: 2px solid var(--border-color); /* Bovenste scheidingslijn */
-  border-bottom: 2px solid var(--border-color); /* Onderste scheidingslijn */
 }
 
 section.gallery h2, section.carousel h2, section.carousel-container-card h2 {
-  margin-bottom: 20px; /* Ruimte onder de titel */
-  font-size: 24px; /* Grotere titelgrootte */
-  color: var(--accent-color); /* Accentkleur voor de titel */
-  text-transform: uppercase; /* Hoofdletters voor de titel */
-  text-align: center; /* Centreer de titel */
+    background: rgba(255, 255, 255, 0.1); /* Transparante achtergrond */
+    backdrop-filter: blur(10px); /* Glasachtig effect */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    color: var(--text-kleur);
+    border-radius: 50px;
+    text-align: center;
+    margin: 30px 10%;
+    width: 50%;
+    margin-left: auto; 
+    margin-right: auto; /* Centreer horizontaal */
 }
 
 section.gallery .gallery-grid {
@@ -381,6 +434,8 @@ section.gallery .gallery-grid {
   max-width: 800px;
   margin: 0 auto;
   overflow: hidden;
+  border-top: 2px solid var(--border-color); /* Bovenste scheidingslijn */
+
 }
 
 .carousel-container {
@@ -627,23 +682,43 @@ footer {
     gap: 10px;
     padding: 10px 0;
   }
+
+  
 }
+
+
 
 /* ========================= CONTACT =============== */
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   padding: 20px;
   text-align: center;
+  max-width: 900px;
+  width: 100%;
+}
+
+#contact {
+  display: grid;
+  place-items: center;
+  margin: 0;    /* Verticaal centreren */
+  
 }
 
 .contact-item {
-  background-color: var(--vaardigheden-kleur);
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1); /* Transparante achtergrond */
+  backdrop-filter: blur(10px); /* Glasachtig effect */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtiele rand */
+  border-radius: 15px;
   padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Diepte-effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
 .contact-item i {
@@ -663,4 +738,16 @@ footer {
 
 .contact-item:hover {
   transform: scale(1.05);
+}
+
+#contact h2 {
+  border: var(--border-color) solid 2px;
+  padding: 20px;
+  color: var(--text-kleur);
+  border-radius: 50px;
+  background: var(--vaardigheden-kleur);
+  text-align: center;
+  width: 50%; /* Zorgt ervoor dat de breedte 80% van de container is */
+  margin-left: auto; /* Centreer horizontaal */
+  margin-right: auto; /* Centreer horizontaal */
 }

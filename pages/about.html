@@ -33,7 +33,7 @@
             <li><a data-i18n="aboutMe" href="../index.html">Over Mij</a></li>
             <li><a class="selected" href="#">Portfolio</a></li>
             <li><a href="../pages/contact.html">Contact</a></li>
-            <li>
+            <!-- <li>
               <a
                 id="linkedin"
                 href="https://www.linkedin.com/in/maartenvds"
@@ -46,25 +46,32 @@
               <a id="mail" href="mailto:maarten.vanderschueren@telenet.be">
                 <i class="fas fa-envelope"></i>
               </a>
-            </li>
+            </li> -->
             <li>
-              <a id="mail" href="../documents/Curiculum Vitae 01-04-2025_NoAdress.pdf">
+                <a id="tooltip" class="mail" href="../documents/Curiculum Vitae 01-04-2025_NoAdress.pdf" data-tooltip="Curiculum">
                 <i class="fas fa-address-card"></i>
-              </a>
+                </a>
             </li>
             <li class="language-switcher">
+              <div id="tooltip" 
+              data-tooltip="Nederlands"
+              >
               <img
                 src="../img/dutch.png"
                 alt="Nederlands"
                 class="flag"
                 data-lang="nl"
               />
-              <img
+              </div>
+              <div id="tooltip" 
+              data-tooltip="English"
+              ><img
                 src="../img/engels.jpg"
                 alt="English"
                 class="flag"
                 data-lang="en"
-              />
+              /></div>
+              
             </li>
           </ul>
         </nav>
@@ -132,9 +139,9 @@
       </section>
 
       <!-- Sectie: Projecten -->
-      <section class="carousel-container-card" data-aos="fade-up" >
+      <section class="gallery" class="carousel-container-card" data-aos="fade-up" >
         <h2 data-i18n="projecten">Projecten</h2>
-        <div class="carousel-card" >
+        <div class="carousel-card" data-aos="fade-up">
           <div class="carousel-item-card previous">
             <img src="../img/solar.png" alt="Next project" class="gallery-image" onclick="openModal('modalSolar')" />
             <h3 data-i18n="zonnepanelen">Voorspelling Zonnepanelen</h3>
@@ -258,13 +265,13 @@
             </div>
             <div class="gallery-item">
                 <h3 data-i18n="driverLicense">Rijbewijs</h3>
-                B, AM
+                <p>B, AM</p>
             </div>
         </div>
         <div class="gallery-grid" data-aos="fade-up">
             <div class="gallery-item">
                 <h3>Diploma</h3>
-                <span data-i18n="Elektromechanica">Elektromechanica</span>
+                <p data-i18n="Elektromechanica">Elektromechanica</p>
             </div>
         </div>
       </section>
@@ -274,7 +281,7 @@
         <h2 data-i18n="ervaringen">Ervaringen</h2>
         <div class="carousel-container">
           <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
-          <div class="carousel-track">
+          <div class="carousel-track" data-aos="fade-up">
             <div class="carousel-item">
               <img
                 src="../img/Zero_Latency_Logo.jpg"
