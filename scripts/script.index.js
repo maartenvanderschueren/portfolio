@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const flags = document.querySelectorAll(".language-switcher .flag");
 
   const loadLanguage = (lang) => {
-    fetch(`../lang/${lang}.json`)
+    fetch(`./lang/${lang}.json`)
       .then((response) => response.json())
       .then((translations) => {
         document.querySelectorAll("[data-i18n]").forEach((element) => {
