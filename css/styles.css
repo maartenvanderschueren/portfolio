@@ -115,6 +115,25 @@ nav ul li a:hover {
   color: var(--text-kleur);
 }
 
+.language-switcher {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.language-switcher .flag {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.language-switcher .flag:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+} 
+
 #about {
   display: flex;
   align-items: center; /* Vertically align photo and text */

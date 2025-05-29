@@ -32,7 +32,6 @@ body {
 header {
   background-color: var(--backgroundCol);
   color: var(--text-kleur);
-  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -174,6 +173,29 @@ nav ul li a:hover {
   color: var(--text-kleur);
 }
 
+.modal-content p {
+  text-align: justify;
+}
+
+.language-switcher {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.language-switcher .flag {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.language-switcher .flag:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
 .modal-content img {
   width: 100%;
   border-radius: 10px;
@@ -221,7 +243,6 @@ ul li {
   font-size: 18px; /* Grotere tekstgrootte voor de sterren */
   text-align: left;
   align-items: center;
-  padding-top: 2%;
   font-weight: bold;
   list-style-type: none; /* Verwijder de standaard opsommingstekens */
 }

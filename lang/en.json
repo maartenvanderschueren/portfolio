@@ -1,0 +1,43 @@
+{
+    "name": "Maarten Van der Schueren",
+    "aboutMe": "About Me",
+    "description": "I am {{age}} years old and have a passion for technology. In my Applied Computer Science studies, I am immersed in AI and data management, essential elements in today's world. With my background in Electromechanics, I want to bring technology and industry together to contribute to tomorrow's innovations.",
+    "opleiding": "Courses",
+    "Elektromechanica": "Electromechanics",
+    "EMDESC": "At Edugo Campus glorieux, I took the Electromechanics major. This is a direction where I learned a lot about the operation of machines and plants. This includes both the mechanical and electrical side of machines. Here we also learned PLC programming, which was a deciding factor for me to continue in the direction of Applied Computer Science.",
+    "TI": "Applied Computer Science",
+    "TIDesc": "In higher education, I am studying Applied Computer Science at University College of Ghent. In this program, I have chosen the elective AI & Data Engineering. This is a direction that focuses on working with (big) data and developing AI applications.",
+    "stage": "Internship",
+    "stageAM": "Internship ArcelorMittal",
+    "stageAMDesc": "During my internship at ArcelorMittal, I worked on computer vision projects, including training segmentation networks for quality control.",
+    "stageDEG": "Internship Degramec",
+    "stageDEGDesc": "For my final year of Electromechanics in 6th grade, I did a 10-day internship at Degramec. This was an internship where I worked as an electro-mechanic. Here I learned a lot about the maintenance and construction of innovative agricultural machinery.",
+    "projecten": "Projects",
+    "zonnepanelen": "Predicting Solar Panel Output",
+    "zonnepanelenDesc": "In this project, I created a program that predicts the output of solar panels based on weather data. The program uses historical weather data to train a model that can predict the output of solar panels in real-time. This is useful for optimizing energy consumption and planning energy production.",
+    "GIP": "Graduation Project Elektromechanics",
+    "GIPDesc": "In the Electromechanics direction, I made a graduation project where we had to apply all aspects of our course. Here we made a vicious circle where a cube had to go from the beginning to the end, the end being the beginning. Here we used pneumatic and electrical components. We also programmed a PLC that controlled the operation of the circle.",
+    
+    "TSO": "Technical Secondary Education",
+    "Arduino": "Animation with Arduino",
+    "arduinoDesc": "In this small project, I used an Arduino to flash an LED light This was for decorating a camp, where a rocket broke down and all the lights had to flash. By using 4 switch I could turn the lights on and after a while they started to blink. We also used a smoke machine for an added effect.",
+    "Vaardigheden": "Skills",
+
+    "lan": "Languages",
+    "nl": "Dutch",
+    "en": "English",
+    "fr": "French",
+
+    "motherLang": "Native Language",
+    "ruimVoldoende": "Good",
+    "matig": "moderate",
+
+    "certificaten": "Certificates",
+    "VCA": "VCA Basic Safety",
+    "driverLicense": "Driver's License",
+    "expired": "Valid until 10-12-2031",
+    "ervaringen": "Experiences",
+    "zlvr": "Zero Latency Ghent",
+    "kamp": "Camps with school of music Lochristi & De Pinte",
+    "footer": "&copy; 2025 Maarten Van der Schueren. All rights reserved."
+  }

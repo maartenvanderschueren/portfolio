@@ -1,41 +1,55 @@
+const geboortedatum = new Date(2004, 7, 17); // Maand is 0-indexed, dus 7 = augustus
 
 // Functie om leeftijd te berekenen
 function berekenLeeftijd(geboortedatum) {
-    const vandaag = new Date();
-    const geboortejaar = geboortedatum.getFullYear();
-    const geboortemaand = geboortedatum.getMonth();
-    const geboortedag = geboortedatum.getDate();
-
-    let leeftijd = vandaag.getFullYear() - geboortejaar;
-    const isVerjaardagVoorbij = (vandaag.getMonth() > geboortemaand) || 
-                                (vandaag.getMonth() === geboortemaand && vandaag.getDate() >= geboortedag);
-
-    if (!isVerjaardagVoorbij) {
-        leeftijd--;
-    }
-
-    return leeftijd;
+  const vandaag = new Date();
+  let leeftijd = vandaag.getFullYear() - geboortedatum.getFullYear();
+  const isVerjaardagVoorbij =
+    vandaag.getMonth() > geboortedatum.getMonth() ||
+    (vandaag.getMonth() === geboortedatum.getMonth() &&
+      vandaag.getDate() >= geboortedatum.getDate());
+  if (!isVerjaardagVoorbij) leeftijd--;
+  return leeftijd;
 }
 
-const geboortedatum = new Date(2004, 7, 17); // Maand is 0-indexed, dus 7 = augustus
+const age = berekenLeeftijd(geboortedatum);
 
-document.addEventListener('DOMContentLoaded', function() {
-    var coll = document.querySelectorAll('.collapsible');
+document.addEventListener("DOMContentLoaded", function () {
+  const flags = document.querySelectorAll(".language-switcher .flag");
 
-    coll.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            this.classList.toggle('active');
-            var content = this.nextElementSibling;
-
-            if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
+  const loadLanguage = (lang) => {
+    fetch(`../lang/${lang}.json`)
+      .then((response) => response.json())
+      .then((translations) => {
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          const key = element.getAttribute("data-i18n");
+          if (translations[key]) {
+            let text = translations[key];
+            if (text.includes("{{age}}")) {
+              text = text.replace("{{age}}", age);
             }
+            if (element.tagName === "TITLE") {
+              document.title = text;
+            } else {
+              element.innerHTML = text;
+            }
+          }
         });
-    });
-});
+      })
+      .catch((error) => console.error("Error loading language file:", error));
+  };
 
+  const savedLanguage = localStorage.getItem("selectedLanguage") || "nl";
+  loadLanguage(savedLanguage);
+
+  flags.forEach((flag) => {
+    flag.addEventListener("click", () => {
+      const selectedLanguage = flag.getAttribute("data-lang");
+      localStorage.setItem("selectedLanguage", selectedLanguage); // Sla de taal op
+      loadLanguage(selectedLanguage);
+    });
+  });
+});
 
 document.getElementById('leeftijd').textContent = berekenLeeftijd(geboortedatum);
 
