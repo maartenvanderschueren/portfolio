@@ -3,95 +3,102 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio van Maarten" />
-    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Portfolio - Maarten Van der Schueren</title>
-    <link rel="stylesheet" href="../css/styles.css" />
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            // https://dashboard.emailjs.com/admin/account
-            emailjs.init({
-              publicKey: "NJF2_5hKciRh5mvMq",
-            });
-        })();
-    </script>
-    <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-                // these IDs from the previous steps
-                emailjs.sendForm('service_34lk6ib', 'template_bkir71h', this)
-                    .then(() => {
-                        console.log('SUCCESS!');
-                    }, (error) => {
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-    </script>
+    <meta name="description" content="Contactpagina van Maarten Van der Schueren" />
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+    <title>Contact - Maarten Van der Schueren</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../css/about.css" />
   </head>
   <body class="fade-in">
-    <header>
-    <h1>Maarten Van der Schueren</h1>
-    <div class="menu-toggle" id="mobile-menu">
-      <i class="fas fa-bars"></i>
+    <div id="dot-loader">
+      <div></div><div></div><div></div>
     </div>
+    <header>
+      <h1>Maarten Van der Schueren</h1>
+      <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
 
-    <nav id="navbar">
-      <ul>
-        <li><a href="../index.html">Over Mij</a></li>
-        <li><a href="./about.html">Portfolio</a></li>
-        <li>
-          <a id="linkedin" href="https://www.linkedin.com/in/maartenvds" target="_blank">
-            <i class="fab fa-linkedin"></i>
-          </a>
-        </li>
-        <li>
-          <a id="mail" href="mailto:maarten.vanderschueren@telenet.be">
+      <nav id="navbar">
+        <ul>
+          <li><a data-i18n="aboutMe" href="../index.html">Over Mij</a></li>
+          <li><a class="selected" href="../pages/about.html">Portfolio</a></li>
+          <li><a class="selected" href="#">Contact</a></li>
+
+          <li>
+            <a
+              id="linkedin"
+              href="https://www.linkedin.com/in/maartenvds"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a id="mail" href="mailto:maarten.vanderschueren@telenet.be">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+          <li>
+            <a id="mail" href="../documents/Curiculum Vitae 01-04-2025_NoAdress.pdf">
+              <i class="fas fa-address-card"></i>
+            </a>
+          </li>
+          <li class="language-switcher">
+            <img
+              src="../img/dutch.png"
+              alt="Nederlands"
+              class="flag"
+              data-lang="nl"
+            />
+            <img
+              src="../img/engels.jpg"
+              alt="English"
+              class="flag"
+              data-lang="en"
+            />
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="contact" class="intro">
+        <h2 data-i18n="contact">Contact</h2>
+        <div class="contact-grid">
+          <div class="contact-item">
             <i class="fas fa-envelope"></i>
-          </a>
-        </li>
-        <li>
-          <a id="mail" href="#">
-            <i class="fas fa-address-card"></i>
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  
-  <form id="contact-form" method="post">
-        <h2>Contact</h2>
-
-        <label for="name">Naam:</label>
-        <input type="text" id="name" name="user_name" required>
-
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="user_email" required>
-
-        <label for="subject">Onderwerp:</label>
-        <input type="text" id="subject" name="subject">
-
-        <label for="message">Bericht:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-
-        <input type="submit" value="Verzenden">
-    </form>
-    <div id="contact" class="contact">
-          <ul>
-            <li><i class="fas fa-envelope"></i> <strong>E-mail: (school)<i></i> </strong> <a href="mailto:maarten.vanderschueren@student.hogent.be">maarten.vanderschueren@student.hogent.be</a></li>
-            <!-- <li><i class="fas fa-envelope"></i> <strong>E-mail (privé):<i></i> </strong> <a href="mailto:maarten.vanderschueren@telenet.be">maarten.vanderschueren@telenet.be</a></li> -->
-            <li><i class="fab fa-linkedin"></i> <strong>LinkedIn:<i></i></strong> <a href="https://www.linkedin.com/in/maartenvds" target="_blank">Volg mij op LinkedIn</a></li>
-          </ul>
-  </div>
+            <p><a href="mailto:maarten.vanderschueren@telenet.be">maarten.vanderschueren@telenet.be</a></p>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <p><a href="https://www.linkedin.com/in/maartenvds" target="_blank">LinkedIn</a></p>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <p><a href="https://github.com/maartenvanderschueren" target="_blank">GitHub</a></p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <p><a href="tel:+32476123456">+32 476 12 34 56</a></p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>Gent, België</p>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer>
-      <p>&copy; 2024 Maarten Van der Schueren. Alle rechten voorbehouden.</p>
+      <p data-i18n="footer">&copy; 2025 Maarten Van der Schueren. Alle rechten voorbehouden.</p>
     </footer>
-
-    <script src="../scripts/script.js"></script>
-    <script>src="../scripts/send_mail.php"</script>
+    <script src="../scripts/script.about.js"></script>
   </body>
 </html>

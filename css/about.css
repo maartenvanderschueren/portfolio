@@ -29,6 +29,47 @@ body {
     transition: 2s ease;
   }
 
+  #dot-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    gap: 10px;
+    height: 100%;
+    background-image: var(--backgroundCol); /* Donkere achtergrondkleur */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  #dot-loader div {
+    width: 15px;
+    height: 15px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    animation: pulse 0.6s ease-in-out infinite;
+  }
+  
+  #dot-loader div:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  #dot-loader div:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 1;
+    }
+  }
+  
 header {
   background-color: var(--backgroundCol);
   color: var(--text-kleur);
@@ -136,7 +177,7 @@ nav ul li a:hover {
 .marquee-content {
   display: flex;
   width: fit-content;
-  animation: marquee 40s linear infinite;
+  animation: marquee 60s linear infinite;
 }
 
 .gallery-track {
@@ -586,4 +627,40 @@ footer {
     gap: 10px;
     padding: 10px 0;
   }
+}
+
+/* ========================= CONTACT =============== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-item {
+  background-color: var(--vaardigheden-kleur);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.contact-item i {
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.contact-item a {
+  color: var(--text-kleur);
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  color: var(--accent-color);
+}
+
+.contact-item:hover {
+  transform: scale(1.05);
 }

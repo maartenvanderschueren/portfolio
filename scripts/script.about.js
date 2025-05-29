@@ -1,4 +1,16 @@
 // script.about.js
+
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    const loadingScreen = document.getElementById("dot-loader");
+    loadingScreen.style.opacity = "0";
+    loadingScreen.style.transition = "opacity 0.5s ease";
+    setTimeout(() => {
+      loadingScreen.style.display = "none";
+    }, 200); // Wacht tot de fade-out is voltooid
+  }, 500); // Laadscherm blijft 2 seconden zichtbaar
+});
+
 let currentIndex = 1;
 
 const projects = [
@@ -280,3 +292,4 @@ function prevProject() {
     }
     renderCarousel();
 }
+
