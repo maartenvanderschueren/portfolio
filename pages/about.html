@@ -277,41 +277,24 @@
       </section>
 
       <!-- Ervaringen -->
-      <section class="carousel" data-aos="fade-up">
+      <section id="ervaringen-carousel" class="gallery carousel-container-card" data-aos="fade-up">
         <h2 data-i18n="ervaringen">Ervaringen</h2>
-        <div class="carousel-container">
-          <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
-          <div class="carousel-track" data-aos="fade-up">
-            <div class="carousel-item">
-              <img
-                src="../img/Zero_Latency_Logo.jpg"
-                alt="Zero Latency Gent"
-                class="carousel-image"
-                onclick="openUrl('https://www.zerolatencyvr.com/gent/')"
-              />
-              <h3>Zero Latency Gent</h3>
-            </div>
-            <div class="carousel-item">
-              <img
-                src="../img/mulo.png"
-                alt="Kampen muziekschool Lochristi & De Pinte"
-                class="carousel-image"
-                onclick="openUrl('https://www.muziekschoollochristi.be/index')"
-              />
-              <h3 data-i18n="kamp">Kampen muziekschool Lochristi & De Pinte</h3>
-            </div>
-            <div class="carousel-item">
-              <img
-                src="../img/akabeast.png"
-                alt="Scouts Akabeast"
-                class="carousel-image"
-                onclick="openUrl('https://www.akabeast.be/')"
-              />
-              <h3>Scouts Akabeast</h3>
-            </div>
+        <div class="carousel-card" data-aos="fade-up">
+          <div class="carousel-item-card active">
+            <img src="../img/Zero_Latency_Logo.jpg" alt="Zero Latency Gent" class="gallery-image" onclick="openUrl('https://www.zerolatencyvr.com/gent/')" />
+            <h3>Zero Latency Gent</h3>
           </div>
-          <button class="carousel-button next" onclick="moveCarousel(1)">&#10095;</button>
+          <div class="carousel-item-card previous">
+            <img src="../img/mulo.png" alt="Kampen muziekschool Lochristi & De Pinte" class="gallery-image" onclick="openUrl('https://www.muziekschoollochristi.be/index')" />
+            <h3 data-i18n="kamp">Kampen muziekschool Lochristi & De Pinte</h3>
+          </div>
+          <div class="carousel-item-card next">
+            <img src="../img/akabeast.png" alt="Scouts Akabeast" class="gallery-image" onclick="openUrl('https://www.akabeast.be/')" />
+            <h3>Scouts Akabeast</h3>
+          </div>
         </div>
+        <button class="carousel-btn left" onclick="prevErvaring()">‹</button>
+        <button class="carousel-btn right" onclick="nextErvaring()">›</button>
       </section>
 
       <!-- Modals -->
@@ -424,5 +407,14 @@
     
     <script>
       AOS.init();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <div id="particles-js"></div>
+
+    <script>
+      particlesJS.load('particles-js', '../scripts/particles.json', function() {
+        console.log('particles.js config geladen');
+      });
     </script>
   </body>

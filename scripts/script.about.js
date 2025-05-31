@@ -281,25 +281,66 @@ function renderCarousel() {
     });
   }
 
-function nextProject() {
-    const items = document.querySelectorAll('.carousel-item-card');
-    console.log(currentIndex);
-    if (currentIndex == 0) {
-        currentIndex = items.length -1;
-    } else {
-        currentIndex = (currentIndex - 1) % items.length;
-    }
-    renderCarousel();
-}
+  function prevProject() {
+    const activeItem = document.querySelector('.carousel-item-card.active');
+    const previousItem = activeItem.previousElementSibling || activeItem.parentElement.lastElementChild;
+  
+    activeItem.classList.remove('active');
+    activeItem.classList.add('next');
+  
+    previousItem.classList.remove('previous');
+    previousItem.classList.add('active');
+  
+    const newPrevious = previousItem.previousElementSibling || activeItem.parentElement.lastElementChild;
+    newPrevious.classList.add('previous');
+    newPrevious.classList.remove('next');
+  }
+  
+  function nextProject() {
+    console.log("Next project clicked");
+    const activeItem = document.querySelector('.carousel-item-card.active');
+    const nextItem = activeItem.nextElementSibling || activeItem.parentElement.firstElementChild;
+  
+    activeItem.classList.remove('active');
+    activeItem.classList.add('previous');
+  
+    nextItem.classList.remove('next');
+    nextItem.classList.add('active');
+  
+    const newNext = nextItem.nextElementSibling || activeItem.parentElement.firstElementChild;
+    newNext.classList.add('next');
+    newNext.classList.remove('previous');
+  }
 
-function prevProject() {
-    const items = document.querySelectorAll('.carousel-item-card');
-    console.log(currentIndex);
-    if (currentIndex == items.length) {
-        currentIndex = 0;
-    } else {
-        currentIndex = (currentIndex + 1) % items.length;
-    }
-    renderCarousel();
-}
 
+  function nextErvaring() {
+    const carousel = document.querySelector('#ervaringen-carousel .carousel-card');
+    const activeItem = carousel.querySelector('.carousel-item-card.active');
+    const nextItem = activeItem.nextElementSibling || carousel.firstElementChild;
+  
+    activeItem.classList.remove('active');
+    activeItem.classList.add('previous');
+  
+    nextItem.classList.remove('next');
+    nextItem.classList.add('active');
+  
+    const newNext = nextItem.nextElementSibling || carousel.firstElementChild;
+    newNext.classList.add('next');
+    newNext.classList.remove('previous');
+  }
+  
+  function prevErvaring() {
+    const carousel = document.querySelector('#ervaringen-carousel .carousel-card');
+    const activeItem = carousel.querySelector('.carousel-item-card.active');
+    const previousItem = activeItem.previousElementSibling || carousel.lastElementChild;
+  
+    activeItem.classList.remove('active');
+    activeItem.classList.add('next');
+  
+    previousItem.classList.remove('previous');
+    previousItem.classList.add('active');
+  
+    const newPrevious = previousItem.previousElementSibling || carousel.lastElementChild;
+    newPrevious.classList.add('previous');
+    newPrevious.classList.remove('next');
+  }
