@@ -139,7 +139,7 @@
       </section>
 
       <!-- Sectie: Projecten -->
-      <section class="gallery" class="carousel-container-card" data-aos="fade-up" >
+      <section class="gallery carousel-container-card" data-aos="fade-up" >
         <h2 data-i18n="projecten">Projecten</h2>
         <div class="carousel-card" data-aos="fade-up">
           <div class="carousel-item-card previous">
@@ -280,16 +280,16 @@
       <section id="ervaringen-carousel" class="carousel-container-card" data-aos="fade-up">
         <h2 data-i18n="ervaringen">Ervaringen</h2>
         <div class="carousel-card" data-aos="fade-up">
-          <div class="carousel-item-card active">
-            <img src="../img/Zero_Latency_Logo.jpg" alt="Zero Latency Gent" class="gallery-image" onclick="openUrl('https://www.zerolatencyvr.com/gent/')" />
-            <h3>Zero Latency Gent</h3>
-          </div>
           <div class="carousel-item-card previous">
-            <img src="../img/mulo.png" alt="Kampen muziekschool Lochristi & De Pinte" class="gallery-image" onclick="openUrl('https://www.muziekschoollochristi.be/index')" />
+            <img src="../img/mulo.png" alt="Kampen muziekschool Lochristi & De Pinte" class="gallery-image" onclick="openModal('modalMULO')" />
             <h3 data-i18n="kamp">Kampen muziekschool Lochristi & De Pinte</h3>
           </div>
+          <div class="carousel-item-card active">
+            <img src="../img/Zero_Latency_Logo.jpg" alt="Zero Latency Gent" class="gallery-image" onclick="openModal('modalZLVR')" />
+            <h3 data-i18n="zlvr">Zero Latency Gent</h3>
+          </div>
           <div class="carousel-item-card next">
-            <img src="../img/akabeast.png" alt="Scouts Akabeast" class="gallery-image" onclick="openUrl('https://www.akabeast.be/')" />
+            <img src="../img/akabeast.png" alt="Scouts Akabeast" class="gallery-image" onclick="openModal('modalAkabeast')" />
             <h3>Scouts Akabeast</h3>
           </div>
         </div>
@@ -298,6 +298,7 @@
       </section>
 
       <!-- Modals -->
+       <!-- MODAL GIP -->
       <div id="modal1" class="modal">
         <div class="modal-content">
           <span class="close" onclick="closeModal('modal1')">&times;</span>
@@ -308,13 +309,12 @@
             Hier hebben we gebruikt gemaakt van pneumatische en elektrische componenten.
             Ook hebben we een PLC geprogrammeerd die de werking van de cirkel aanstuurde.
           </p>
-          <!-- <img src="../img/Afbeelding1.png" alt="Splendor Spel" /> -->
           <video autoplay muted loop width="100%" height="100%">
             <source src="../img/eindwerk.mp4" type="video/mp4" alt="Arduino project" />
           </video>
         </div>
       </div>
-
+      <!-- SOLAR MODAL -->
       <div id="modalSolar" class="modal">
         <div class="modal-content">
           <span class="close" onclick="closeModal('modalSolar')">&times;</span>
@@ -327,7 +327,7 @@
           <img src="../img/solar.png" alt="Voorspelling Zonnepanelen" />
         </div>
       </div>
-
+      <!-- ARDUINO MODAL -->
       <div id="modalArduino" class="modal">
         <div class="modal-content">
           <span class="close" onclick="closeModal('modalArduino')">&times;</span>
@@ -343,7 +343,7 @@
           </video>
         </div>
       </div>
-
+      <!-- MODAL STAGES -->
       <div id="modalstageAM" class="modal">
         <div class="modal-content">
           <span class="close" onclick="closeModal('modalstageAM')">&times;</span>
@@ -356,7 +356,7 @@
           <img src="../img/ArcelorMittal.svg.png" alt="Stage ArcelorMittal" />
         </div>
       </div>
-
+      <!-- MODAL OPLEIDING -->
       <div id="modalHOGENT" class="modal">
         <div class="modal-content">
           <span class="close" onclick="closeModal('modalHOGENT')">&times;</span>
@@ -370,7 +370,7 @@
           <img id="makeSmall" src="../img/HOGENT_Logo_Pos_rgb.jpg" alt="hogent" />
         </div>
       </div>
-
+      <!-- MODAL GLORIEUX -->
       <div id="modalGlorieux" class="modal">
         <div class="modal-content">
           <span class="close" onclick="closeModal('modalGlorieux')">&times;</span>
@@ -385,7 +385,7 @@
           <img id="makeSmall" src="../img/glorieux.png" alt="glorieux" />
         </div>
       </div>
-
+      <!-- MODAL DEGRAMEC -->
       <div id="modelstageDegramec" class="modal">
         <div class="modal-content">
           <span class="close" onclick="closeModal('modelstageDegramec')">&times;</span>
@@ -395,6 +395,49 @@
             elektromechanieker aan de slag ging. Hier heb ik veel geleerd over het onderhoud en het opbouwen van innovatieve landbouwmachines.
           </p>
           <img src="../img/degramec.jpg" alt="Stage ArcelorMittal" />
+        </div>
+      </div>
+      <!-- ERVARINGEN -->
+       <!-- MODAL ZLVR -->
+       <div id="modalZLVR" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modalZLVR')">&times;</span>
+          <h2 data-i18n="zlvr">Studentenjob: Zero Latency VR</h2>
+          <p data-i18n="zlvrDesc">
+            Bij Zero Latency VR werk ik als student GameMaster. Dit houdt in dat ik de klanten help met het opstarten van de VR-ervaring en hen begeleid tijdens het spel.
+            Ik zorg ervoor dat alles soepel verloopt en dat de klanten een geweldige ervaring hebben.
+          </p>
+          <p><a href="https://zlvr.be"><i class="fas fa-link"></i> Zero Latency Website</a></p>
+          <img src="../img/zlvr_clean.jpeg" alt="Stage ArcelorMittal" />
+        </div>
+      </div>
+      <!-- MODAL MULO -->
+      <div id="modalMULO" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modalMULO')">&times;</span>
+          <h2 data-i18n="kamp">Kamp muziekschool</h2>
+          <p data-i18n="muloDesc">
+            Bij muziekschool Lochristi en De Pinte ben ik al jaren actief als lid en sinds 2022 ook als leiding bij verschillenden kampen.
+            Tijdens deze kampen organiseer ik verschillende muzische activiteiten en zorg ik voor de animatie. 
+            Naast muzische activiteiten zijn er ook activiteiten zoals sport, spel en andere leuke dingen.
+          </p>
+          <p><a href="https://muziekschoollochristi.be"><i class="fas fa-link"></i> Website muziekschool Lochristi</a></p>
+          <p><a href="https://muziekschooldepinte.be"><i class="fas fa-link"></i> Website muziekschool De Pinte</a></p>
+          <img src="../img/mulo.png" alt="muziekschool" />
+        </div>
+      </div>
+      <!-- MODAL AKABEAST -->
+      <div id="modalAkabeast" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modalAkabeast')">&times;</span>
+          <h2>Scouts akabeast</h2>
+          <p data-i18n="akabeastDesc">
+            Bij akabeast ben ik 2 jaar vrijwilliger geweest en heb ik mij ingezet voor kinderen met een fysieke of mentale beperking.
+            Hier zorgden we ervoor dat deze kinderen een onvergetelijke ervaring hadden tijdens de kampen.
+            Ook ben ik 1 jaar groepsleiding geweest, waarbij ik verantwoordelijk was voor het organiseren van de kampen en het financiële aspect.
+          </p>
+          <p><a href="https://akabeast.be"><i class="fas fa-link"></i> Akabeast Website</a></p>
+          <img src="../img/akabeast.png" alt="akabeast" />
         </div>
       </div>
     </main>

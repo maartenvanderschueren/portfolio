@@ -254,93 +254,120 @@ function moveCarousel(direction) {
     track.style.transform = `translateX(${offset}%)`;
 }
 
+  function nextProject() {
+    console.log("Previous project clicked");
+    const activeItem = document.querySelector('.carousel-item-card.active');
+    const prevItem = activeItem.previousElementSibling || activeItem.parentElement.lastElementChild;
+    const items = Array.from(activeItem.parentElement.children);
 
+    activeItem.classList.remove('active');
+    activeItem.classList.add('next');
 
-function renderCarousel() {
-    const carousel = document.querySelector('.carousel-card');
-    const items = document.querySelectorAll('.carousel-item-card');
-    const totalItems = items.length;
-  
-    // Bereken de indexen voor previous, active en next
-    const prevIndex = (currentIndex - 1 + totalItems) % totalItems;
-    const nextIndex = (currentIndex + 1) % totalItems;
-  
-    // Reset alle items
+    prevItem.classList.remove('previous');
+    prevItem.classList.add('active');
+
+    // Update classes dynamically for all items
     items.forEach((item, index) => {
       item.classList.remove('previous', 'active', 'next', 'hidden');
-      item.cloneNode(true); // Clone the node to reset it
-      if (index === prevIndex) {
-        item.classList.add('previous');
-      } else if (index === currentIndex) {
+      const relativeIndex = (index - items.indexOf(prevItem) + items.length) % items.length;
+
+      if (relativeIndex === 0) {
         item.classList.add('active');
-      } else if (index === nextIndex) {
+      } else if (relativeIndex === 1) {
         item.classList.add('next');
+      } else if (relativeIndex === items.length - 1) {
+        item.classList.add('previous');
       } else {
-        item.classList.add('hidden'); // Verberg items die niet in de carousel zichtbaar zijn
+        item.classList.add('hidden');
+      }
+    });
+  }
+  
+  function prevProject() {
+    console.log("Next project clicked");
+    const activeItem = document.querySelector('.carousel-item-card.active');
+    const nextItem = activeItem.nextElementSibling || activeItem.parentElement.firstElementChild;
+    const items = Array.from(activeItem.parentElement.children);
+
+    activeItem.classList.remove('active');
+    activeItem.classList.add('previous');
+
+    nextItem.classList.remove('next');
+    nextItem.classList.add('active');
+
+    // Update classes dynamically for all items
+    items.forEach((item, index) => {
+      item.classList.remove('previous', 'active', 'next', 'hidden');
+      const relativeIndex = (index - items.indexOf(nextItem) + items.length) % items.length;
+
+      if (relativeIndex === 0) {
+        item.classList.add('active');
+      } else if (relativeIndex === 1) {
+        item.classList.add('next');
+      } else if (relativeIndex === items.length - 1) {
+        item.classList.add('previous');
+      } else {
+        item.classList.add('hidden');
       }
     });
   }
 
-  function prevProject() {
-    const activeItem = document.querySelector('.carousel-item-card.active');
-    const previousItem = activeItem.previousElementSibling || activeItem.parentElement.lastElementChild;
-  
-    activeItem.classList.remove('active');
-    activeItem.classList.add('next');
-  
-    previousItem.classList.remove('previous');
-    previousItem.classList.add('active');
-  
-    const newPrevious = previousItem.previousElementSibling || activeItem.parentElement.lastElementChild;
-    newPrevious.classList.add('previous');
-    newPrevious.classList.remove('next');
-  }
-  
-  function nextProject() {
-    console.log("Next project clicked");
-    const activeItem = document.querySelector('.carousel-item-card.active');
-    const nextItem = activeItem.nextElementSibling || activeItem.parentElement.firstElementChild;
-  
-    activeItem.classList.remove('active');
-    activeItem.classList.add('previous');
-  
-    nextItem.classList.remove('next');
-    nextItem.classList.add('active');
-  
-    const newNext = nextItem.nextElementSibling || activeItem.parentElement.firstElementChild;
-    newNext.classList.add('next');
-    newNext.classList.remove('previous');
-  }
-
-
   function nextErvaring() {
+    console.log("Next project clicked");
     const carousel = document.querySelector('#ervaringen-carousel .carousel-card');
     const activeItem = carousel.querySelector('.carousel-item-card.active');
-    const nextItem = activeItem.nextElementSibling || carousel.firstElementChild;
-  
+    const prevItem = activeItem.previousElementSibling || activeItem.parentElement.lastElementChild;
+    const items = Array.from(activeItem.parentElement.children);
+
     activeItem.classList.remove('active');
-    activeItem.classList.add('previous');
-  
-    nextItem.classList.remove('next');
-    nextItem.classList.add('active');
-  
-    const newNext = nextItem.nextElementSibling || carousel.firstElementChild;
-    newNext.classList.add('next');
-    newNext.classList.remove('previous');
+    activeItem.classList.add('next');
+
+    prevItem.classList.remove('previous');
+    prevItem.classList.add('active');
+
+    // Update classes dynamically for all items
+    items.forEach((item, index) => {
+      item.classList.remove('previous', 'active', 'next', 'hidden');
+      const relativeIndex = (index - items.indexOf(prevItem) + items.length) % items.length;
+
+      if (relativeIndex === 0) {
+        item.classList.add('active');
+      } else if (relativeIndex === 1) {
+        item.classList.add('next');
+      } else if (relativeIndex === items.length - 1) {
+        item.classList.add('previous');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
   }
   
   function prevErvaring() {
+    console.log("Previous project clicked");
     const carousel = document.querySelector('#ervaringen-carousel .carousel-card');
     const activeItem = carousel.querySelector('.carousel-item-card.active');
-    const previousItem = activeItem.previousElementSibling || carousel.lastElementChild;
-  
+    const nextItem = activeItem.nextElementSibling || activeItem.parentElement.firstElementChild;
+    const items = Array.from(activeItem.parentElement.children);
+
     activeItem.classList.remove('active');
-    activeItem.classList.add('next');
-  
-    previousItem.classList.remove('previous');
-    previousItem.classList.add('active');
-  
-    const newPrevious = previousItem.previousElementSibling || carousel.lastElementChild;
-    newPrevious.classList.add('previous');
-    newPrevious.classList.remove('next');
+    activeItem.classList.add('previous');
+
+    nextItem.classList.remove('next');
+    nextItem.classList.add('active');
+
+    // Update classes dynamically for all items
+    items.forEach((item, index) => {
+      item.classList.remove('previous', 'active', 'next', 'hidden');
+      const relativeIndex = (index - items.indexOf(nextItem) + items.length) % items.length;
+
+      if (relativeIndex === 0) {
+        item.classList.add('active');
+      } else if (relativeIndex === 1) {
+        item.classList.add('next');
+      } else if (relativeIndex === items.length - 1) {
+        item.classList.add('previous');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
   }
