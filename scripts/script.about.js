@@ -199,25 +199,25 @@ document.querySelectorAll('.dropdown-toggle').forEach(button => {
 });
   
 
-var slideIndex = 1;
-showDivs(slideIndex);
+// var slideIndex = 1;
+// showDivs(slideIndex);
   
-function plusDivs(n) {
-showDivs(slideIndex += n);
-}
+// function plusDivs(n) {
+// showDivs(slideIndex += n);
+// }
 
-function showDivs(n) {
-var i;
-var slides = document.getElementsByClassName("slideBox");
-if (n > slides.length) {slideIndex = 1}
-if (n < 1) {slideIndex = slides.length} ;
+// function showDivs(n) {
+// var i;
+// var slides = document.getElementsByClassName("slideBox");
+// if (n > slides.length) {slideIndex = 1}
+// if (n < 1) {slideIndex = slides.length} ;
 
-for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+// for (i = 0; i < slides.length; i++) {
+//     slides[i].style.display = "none";
 
-}
-slides[slideIndex-1].style.display = "block";
-}
+// }
+// slides[slideIndex-1].style.display = "block";
+// }
 
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', function (event) {

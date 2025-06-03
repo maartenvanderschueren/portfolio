@@ -712,29 +712,29 @@ footer {
 /* ========================= CONTACT =============== */
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Automatisch aanpassen aan beschikbare ruimte */
   gap: 20px;
   padding: 20px;
+  max-width: 1200px;
+  margin: auto;
   text-align: center;
-  max-width: 900px;
-  width: 100%;
 }
 
 #contact {
-  display: grid;
   place-items: center;
-  margin: 0;    /* Verticaal centreren */
-  
+  margin: 0; /* Verticaal centreren */
 }
 
 .contact-item {
+  align-items: center;
+  justify-content: center;
   background: rgba(255, 255, 255, 0.1); /* Transparante achtergrond */
   backdrop-filter: blur(10px); /* Glasachtig effect */
   border: 1px solid rgba(255, 255, 255, 0.2); /* Subtiele rand */
   border-radius: 15px;
   padding: 20px;
-  height: 80px;
-  margin: 20px;
+  height: 100px;
+  margin: auto 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Diepte-effect */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -753,14 +753,12 @@ footer {
 .contact-item a, .modal-content a {
   color: var(--text-kleur);
   text-decoration: none;
+  word-break: break-all;
+  margin-top: auto; /* Zorg dat de link altijd binnen het grid-item blijft */
 }
 
 .contact-item a:hover, .modal-content a:hover {
   color: var(--accent-color);
-}
-
-.contact-item:hover {
-  transform: scale(1.05);
 }
 
 #contact h2 {

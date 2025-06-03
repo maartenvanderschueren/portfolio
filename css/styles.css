@@ -257,6 +257,7 @@ nav ul li a:hover {
   flex-grow: 0; /* De tekst vult de resterende ruimte */
   margin-right: 20px;
   font-size: 18px; /* Slightly larger text */
+  text-align: justify;
   max-width: 800px; /* Limit text width */
   line-height: 1.6; /* Improve readability */
 }
@@ -349,10 +350,13 @@ footer {
 
   #about .about-text {
     align-items: center;
+    
   }
 
   #about .about-text p {
     align-items: center;
+    text-align: justify;
+
   }
 
   #about .foto {
