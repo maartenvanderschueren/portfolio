@@ -90,11 +90,14 @@ header {
   background-color: var(--backgroundCol);
   color: var(--text-kleur);
   display: flex;
-  margin-right: 30px;
   margin-top: 10px;
   justify-content: space-between;
   align-items: center;
   position: relative;
+}
+
+header .menu-toggle {
+  margin-right: 30px;
 }
 
 header #linkedin,
@@ -145,6 +148,7 @@ header h1 {
 
 header nav ul {
     flex-direction: row;
+    margin-right: 15px;
 }
 
 .menu-toggle {
@@ -327,7 +331,8 @@ nav ul li a:hover {
 
 .modal-content {
   background-color: var(--vaardigheden-kleur);
-  margin: 10% auto;
+  margin: 0 auto;
+  margin-top: 5%;
   padding: 20px;
   border-radius: 10px;
   width: 80%;
@@ -690,6 +695,7 @@ footer {
 
   header nav ul {
     flex-direction: column;
+    margin: auto;
     background-image: var(--backgroundCol);
     width: 100%;
   }
@@ -700,7 +706,9 @@ footer {
 
   nav ul {
     flex-direction: column; /* Zet de items onder elkaar op kleine schermen */
-    gap: 10px;
+    gap: 10px;  
+    width: 100%;
+    border-top: 2px solid var(--accent-color);
     padding: 10px 0;
   }
 
@@ -712,29 +720,29 @@ footer {
 /* ========================= CONTACT =============== */
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Automatisch aanpassen aan beschikbare ruimte */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: auto;
+  margin: 20px;
   text-align: center;
+  max-width: 100%;
+  width: 100%;
 }
 
 #contact {
+  display: grid;
   place-items: center;
-  margin: 0; /* Verticaal centreren */
+  margin: 0;    /* Verticaal centreren */
+  
 }
 
 .contact-item {
-  align-items: center;
-  justify-content: center;
   background: rgba(255, 255, 255, 0.1); /* Transparante achtergrond */
   backdrop-filter: blur(10px); /* Glasachtig effect */
   border: 1px solid rgba(255, 255, 255, 0.2); /* Subtiele rand */
   border-radius: 15px;
   padding: 20px;
-  height: 100px;
-  margin: auto 20px;
+  height: 80px;
+  margin: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Diepte-effect */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -754,11 +762,14 @@ footer {
   color: var(--text-kleur);
   text-decoration: none;
   word-break: break-all;
-  margin-top: auto; /* Zorg dat de link altijd binnen het grid-item blijft */
 }
 
 .contact-item a:hover, .modal-content a:hover {
   color: var(--accent-color);
+}
+
+.contact-item:hover {
+  transform: scale(1.05);
 }
 
 #contact h2 {

@@ -151,6 +151,8 @@ header h1 {
 }
 
 .menu-toggle {
+  margin-top: 20px;
+  font-size: 24px;
   display: none; /* Verberg het hamburgericoon op grotere schermen */
   cursor: pointer; /* Voeg een cursor toe voor de muisaanwijzer */
 }
