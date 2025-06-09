@@ -223,13 +223,15 @@ nav ul li a:hover {
 .marquee-content {
   display: flex;
   width: fit-content;
-  animation: marquee 60s linear infinite;
+  animation: marquee 100s normal infinite;
 }
 
 .gallery-track {
   display: flex;
   max-width: 80%;
   width: 80%;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .marquee-container .gallery-item {
@@ -294,7 +296,6 @@ nav ul li a:hover {
 }
 
 .gallery-item img {
-  width: 100%;
   object-fit: fill; /* Zorg dat de afbeelding netjes binnen de container past */
   border-radius: 10px;
 }
